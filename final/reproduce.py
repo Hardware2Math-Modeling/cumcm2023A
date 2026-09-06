@@ -1,7 +1,7 @@
 """Reproduce the paper experiment from the repository's documented warm start.
 
 Run: /opt/miniconda3/envs/tf2/bin/python final/reproduce.py
-All physical calculations call the unmodified heliostat package.
+Physical formulas are unchanged; search refinements are in heliostat.optimize/refine.
 """
 from pathlib import Path
 import sys
@@ -17,21 +17,21 @@ import numpy as np
 from heliostat.model import Site, validate_field
 from heliostat.optics import evaluate
 from heliostat.optimize import (SearchBudget, candidates, decode, select_design,
-                                optimize_q3, trim_field)
+                                optimize_q3, trim_field, tower_phase_search)
 from heliostat.verification import (replicated, certified, evaluation_task,
                                     uncertainty, legacy_field)
 from heliostat.io import (load_attachment, load_field, save_field, write_json,
                           write_metrics, write_instantaneous, input_hashes, HEADERS)
 
 OUT = Path(__file__).resolve().parent / 'data'
-SEEDS = [915721, 916718, 917715, 918712]
+SEEDS = [1915721, 1916718, 1917715, 1918712]
 WARM = np.array([.5, .5449981933853429, .8483680877431757, 1., 0., 0.,
                  .0000011923999998497692, .1122756431127115, .6,
                  .014215868393180123, .5, .3978557525038477])
 
 
 def q2_search(site, budget):
-    """Coordinate refinement about a recovered, fully interacting Q2 checkpoint."""
+    """Multi-start tower/phase search followed by local refinement for Q2."""
     result = select_design(WARM, site, budget, 512)
     if result is None:
         raise RuntimeError('Warm-start capacity check failed')
@@ -40,6 +40,8 @@ def q2_search(site, budget):
     history = [dict(stage='warm_start', parameters=p, power_kw=best.annual_power_kw,
                     unit=best.unit_power, count=len(field), accepted=True)]
     print('Q2 warm:', best.annual_power_kw, best.unit_power, len(field), flush=True)
+    p,field,best,restarts=tower_phase_search(p,site,budget)
+    history.extend(restarts)
     # Paired coordinate moves, decreasing scale. All trials use all 60 times.
     for scale in (.02, .007):
         for dim in (1, 2, 3, 4, 6, 7, 8, 9):
@@ -90,6 +92,7 @@ def verify(site,budget):
         np.savez_compressed(OUT/f'{name}_optics.npz',metrics=e.metrics,power_kw=e.power_kw,
                             atmospheric=e.atmospheric,area=e.area,time_indices=e.time_indices)
         audit[name]=dict(uncertainty=stats,constraints=check,power_MW=e.annual_power_kw/1000,
+                         design_sha256=hashlib.sha256((OUT/f'{name}.npz').read_bytes()).hexdigest(),
                          unit_power_kW_m2=e.unit_power,annual=e.rows().mean(axis=0),
                          monthly=e.monthly(),tower_xy=f.tower,
                          width_range_m=[f.widths.min(),f.widths.max()],
@@ -106,10 +109,19 @@ def verify(site,budget):
     audit['paired_q3_minus_q2']=uncertainty(dif)
     audit['paired_q3_minus_q2']['units']='kW/m2'
     audit['q3_improves_q2']=bool(evals['q3'].unit_power>evals['q2'].unit_power)
+    previous=ROOT/'final/audit/before_revision/q3.npz'
+    if previous.exists():
+        old=load_field(previous)
+        old_e,old_stats=replicated(old,site,4096,SEEDS,budget.workers)
+        paired=np.array(audit['q3']['uncertainty']['replicate_kw'])/fields['q3'].area.sum()-np.array(old_stats['replicate_kw'])/old.area.sum()
+        audit['revision_q3_comparison']=dict(old_power_MW=old_e.annual_power_kw/1000,
+            old_unit_power=old_e.unit_power,old_area_m2=float(old.area.sum()),old_uncertainty=old_stats,
+            paired_unit_gain=uncertainty(paired),relative_gain_percent=100*(evals['q3'].unit_power/old_e.unit_power-1))
+        print('Q3 revision comparison:',audit['revision_q3_comparison']['relative_gain_percent'],flush=True)
     audit['assumptions']=site
     audit['sampling']=dict(rays=4096,replicates=4,seeds=SEEDS)
     audit['input_sha256']=input_hashes()
-    sources=[*sorted((ROOT/'heliostat').glob('*.py')),ROOT/'heliostat/raytrace.cpp',Path(__file__)]
+    sources=[*sorted((ROOT/'heliostat').glob('*.py')),ROOT/'heliostat/raytrace.cpp',Path(__file__),ROOT/'final/reoptimize.py']
     audit['source_sha256']={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources}
     write_json(audit,OUT/'verification.json')
     write_metrics(evals,OUT/'metrics.csv');write_instantaneous(evals,OUT/'instantaneous.csv')

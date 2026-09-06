@@ -1,0 +1,2099 @@
+[
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5057858238259272,
+    "power_kw": 60334.20599193843,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050932689228468,
+    "power_kw": 60422.41649809755,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5061885027747354,
+    "power_kw": 60282.646528027944,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050766630473562,
+    "power_kw": 60420.42999939138,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5060337348992767,
+    "power_kw": 60364.87936534579,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5059634094943007,
+    "power_kw": 60352.699300940636,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5042475057939312,
+    "power_kw": 60494.46042915277,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5051396478033671,
+    "power_kw": 60427.96462991384,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050998192661403,
+    "power_kw": 60423.200091138744,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5065375088806261,
+    "power_kw": 60317.74549685499,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050692757446299,
+    "power_kw": 60419.54628402713,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5058163437037867,
+    "power_kw": 60352.37133931546,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5051313426322276,
+    "power_kw": 60426.97111338818,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5062010119317312,
+    "power_kw": 60310.515929660876,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5051381186348051,
+    "power_kw": 60427.78170120456,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507204054017356,
+    "power_kw": 60225.578810933155,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065042289955061,
+    "power_kw": 60313.78257682311,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076100354263329,
+    "power_kw": 60173.91123627152,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5064918580052874,
+    "power_kw": 60312.30945740655,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5074528689084694,
+    "power_kw": 60256.226804850085,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5073829282719259,
+    "power_kw": 60244.12031160248,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5056508684334522,
+    "power_kw": 60385.86714083977,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065511245341902,
+    "power_kw": 60319.36682896179,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065102754457429,
+    "power_kw": 60314.5025792714,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5079121530548504,
+    "power_kw": 60209.17432039733,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5078893128355011,
+    "power_kw": 60200.53590633816,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5051264625477362,
+    "power_kw": 60426.38732715338,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065761391781172,
+    "power_kw": 60322.34553616438,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5064825586158668,
+    "power_kw": 60311.202099719274,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5072342872024378,
+    "power_kw": 60243.734116745036,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065424588130073,
+    "power_kw": 60318.33492756122,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076223200166197,
+    "power_kw": 60201.82123413924,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065512325119487,
+    "power_kw": 60319.379686795306,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5077054289514612,
+    "power_kw": 60241.90455326354,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5081380348941078,
+    "power_kw": 60178.66632382187,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507921295781907,
+    "power_kw": 60210.25812208194,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079041446709288,
+    "power_kw": 60208.224986579145,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5075977385286525,
+    "power_kw": 60262.41702913028,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082797452460556,
+    "power_kw": 60162.11381021887,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079222801875349,
+    "power_kw": 60210.37481598205,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507901741188498,
+    "power_kw": 60207.94007177295,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082239267420517,
+    "power_kw": 60189.20691074815,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5075951096516778,
+    "power_kw": 60228.4466113579,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5081980458041688,
+    "power_kw": 60184.8725940634,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076132051435281,
+    "power_kw": 60231.86148697081,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079197065869989,
+    "power_kw": 60210.06973495107,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079047498406297,
+    "power_kw": 60208.29672490593,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5074630212787518,
+    "power_kw": 60246.60679884944,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5083560384003903,
+    "power_kw": 60170.945101661775,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5079274270906643,
+    "power_kw": 60210.98494272515,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5078964191514317,
+    "power_kw": 60207.30918421584,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076034927340324,
+    "power_kw": 60223.802799792866,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5081502057539519,
+    "power_kw": 60184.97161859556,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079140638901977,
+    "power_kw": 60209.40083558864,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507447525432355,
+    "power_kw": 60233.81378988574,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082822364234372,
+    "power_kw": 60171.23805264381,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079186790966427,
+    "power_kw": 60209.94793367972,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5077206690290492,
+    "power_kw": 60243.71286817822,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.508153355148397,
+    "power_kw": 60180.48069788473,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507936434454387,
+    "power_kw": 60212.05269810231,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079192621292445,
+    "power_kw": 60210.017047819536,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076130065819742,
+    "power_kw": 60264.22966485864,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082942651220632,
+    "power_kw": 60163.8324433949,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5079382424723934,
+    "power_kw": 60212.26702506942,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079111588419122,
+    "power_kw": 60209.05646391418,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082392643836615,
+    "power_kw": 60191.023355106234,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076105743032335,
+    "power_kw": 60230.28156193737,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082133146136687,
+    "power_kw": 60186.680848467375,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076284897601229,
+    "power_kw": 60233.67511376437,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079350073563988,
+    "power_kw": 60211.8835263449,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079194720056183,
+    "power_kw": 60210.041927088714,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5074795504930549,
+    "power_kw": 60248.56916661431,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5083694905675263,
+    "power_kw": 60172.53735108756,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079358745387826,
+    "power_kw": 60211.98632430907,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079121530548504,
+    "power_kw": 60209.17432039733,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076187626451167,
+    "power_kw": 60225.6144739186,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5081655196448492,
+    "power_kw": 60186.78538562466,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079293686071614,
+    "power_kw": 60211.21509493655,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5074630748347325,
+    "power_kw": 60235.65949759029,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082969931411486,
+    "power_kw": 60172.984975732325,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079336041197817,
+    "power_kw": 60211.71718317397,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "coupled_tower",
+    "delta": [
+      0,
+      -4
+    ],
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4995759286511374,
+    "power_kw": 59344.66973408486,
+    "count": 2407,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "coupled_tower",
+    "delta": [
+      0,
+      4
+    ],
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.497674356416822,
+    "power_kw": 59088.02918120625,
+    "count": 2406,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "coupled_tower",
+    "delta": [
+      -3,
+      0
+    ],
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.498433907297961,
+    "power_kw": 59229.73656320728,
+    "count": 2408,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "coupled_tower",
+    "delta": [
+      3,
+      0
+    ],
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49850989914798777,
+    "power_kw": 59264.269239027555,
+    "count": 2409,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "regional_standardization",
+    "relative_tolerance": 0.0002,
+    "accepted": true,
+    "capacity_restoration_trials": [
+      {
+        "group": 2,
+        "increment": 0.005,
+        "unit": 0.5079499579350002,
+        "power_kw": 60197.817638877896
+      },
+      {
+        "group": 2,
+        "increment": 0.01,
+        "unit": 0.5079203094894496,
+        "power_kw": 60200.11999896627
+      },
+      {
+        "group": 2,
+        "increment": 0.025,
+        "unit": 0.5078316239855211,
+        "power_kw": 60207.05381030954
+      },
+      {
+        "group": 4,
+        "increment": 0.005,
+        "unit": 0.5079573586732806,
+        "power_kw": 60198.11846633068
+      },
+      {
+        "group": 4,
+        "increment": 0.01,
+        "unit": 0.5079343384450284,
+        "power_kw": 60200.63031426513
+      },
+      {
+        "group": 4,
+        "increment": 0.025,
+        "unit": 0.5078640191879856,
+        "power_kw": 60208.013802714086
+      },
+      {
+        "group": 5,
+        "increment": 0.005,
+        "unit": 0.5079431853119557,
+        "power_kw": 60199.373938545396
+      },
+      {
+        "group": 5,
+        "increment": 0.01,
+        "unit": 0.5079056036945421,
+        "power_kw": 60203.094542678264
+      },
+      {
+        "group": 5,
+        "increment": 0.025,
+        "unit": 0.5077938999329654,
+        "power_kw": 60214.372549548876
+      }
+    ],
+    "regional_capacity_restoration": {
+      "group": 4,
+      "increment": 0.01
+    },
+    "unit": 0.5079343384450284,
+    "power_kw": 60200.63031426513,
+    "before_types": 10,
+    "after_types": 5,
+    "relative_loss": 7.686027628017733e-06
+  },
+  {
+    "stage": "stop",
+    "group_sweeps": [
+      {
+        "step": 0.15,
+        "sweeps": 2,
+        "stop": "budget"
+      },
+      {
+        "step": 0.05,
+        "sweeps": 2,
+        "stop": "budget"
+      }
+    ],
+    "global_optimality_claim": false
+  }
+]

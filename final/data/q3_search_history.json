@@ -1,506 +1,2365 @@
 [
   {
-    "trial": 0,
-    "group": 0,
-    "kind": 0,
-    "unit": 0.4917081679005264,
-    "power_kw": 60073.887367480296,
-    "accepted": false
+    "stage": "height_profile",
+    "profile": "middle_4.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4984337077271135,
+    "power_kw": 59625.758128206195,
+    "count": 2404,
+    "reason": "insufficient_capacity"
   },
   {
-    "trial": 1,
+    "stage": "height_profile",
+    "profile": "outer_4.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49997445806277685,
+    "power_kw": 59810.07232170074,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "middle_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49782360520882735,
+    "power_kw": 59552.77384840172,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "outer_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5011919846444739,
+    "power_kw": 59955.72046778213,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "middle_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4971936193487774,
+    "power_kw": 59477.41099887291,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "outer_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5019085364884363,
+    "power_kw": 60041.43888183011,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "middle_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49649031682741773,
+    "power_kw": 59393.27755167734,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "outer_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5021798744940851,
+    "power_kw": 60073.8980314522,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "middle_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49570013911501537,
+    "power_kw": 59298.75155067141,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "outer_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5021211026249844,
+    "power_kw": 60066.86737281613,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_0.5_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.498894089021089,
+    "power_kw": 59680.831818560146,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_0.5_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4989373293645509,
+    "power_kw": 59686.00449894004,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_0.5_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4989785269291209,
+    "power_kw": 59690.93280933006,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_0.5_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49901266551379503,
+    "power_kw": 59695.01668038665,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_1_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4997742143177675,
+    "power_kw": 59786.117912274734,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_1_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5003259157015865,
+    "power_kw": 59852.11588303918,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_1_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5008790912547347,
+    "power_kw": 59918.290203160635,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_1_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5014328946136717,
+    "power_kw": 59984.539625337835,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_2_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5008566502110848,
+    "power_kw": 59915.605665136674,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_2_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5020302103799336,
+    "power_kw": 60055.99427387616,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_2_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5031902819805284,
+    "power_kw": 60194.76929570181,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_2_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5043362125244583,
+    "power_kw": 60331.85267586818,
+    "count": 2404
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_4.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5006811349518159,
+    "power_kw": 59894.60943186686,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5028660569731793,
+    "power_kw": 60155.983472095555,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5043463074897447,
+    "power_kw": 60333.060298765966,
+    "count": 2404
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050731591672087,
+    "power_kw": 60420.01084332921,
+    "count": 2404
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_6.0",
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5051264625477362,
+    "power_kw": 60426.38732715338,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5057858238259272,
+    "power_kw": 60334.20599193843,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050932689228468,
+    "power_kw": 60422.41649809755,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
     "group": 1,
-    "kind": 0,
-    "unit": 0.4911575549039591,
-    "power_kw": 60077.422948418396,
-    "accepted": false
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "trial": 2,
-    "group": 2,
-    "kind": 0,
-    "unit": 0.4938546285459604,
-    "power_kw": 60102.885122952284,
-    "accepted": false
-  },
-  {
-    "trial": 3,
-    "group": 3,
-    "kind": 0,
-    "unit": 0.4944017064097101,
-    "power_kw": 60074.43804786811,
-    "accepted": false
-  },
-  {
-    "trial": 4,
-    "group": 4,
-    "kind": 0,
-    "unit": 0.49289438189108814,
-    "power_kw": 60099.497467450354,
-    "accepted": false
-  },
-  {
-    "trial": 5,
-    "group": 5,
-    "kind": 0,
-    "unit": 0.49299266809094217,
-    "power_kw": 60083.10396553505,
-    "accepted": false
-  },
-  {
-    "trial": 6,
-    "group": 0,
-    "kind": 1,
-    "unit": 0.4902781565234486,
-    "power_kw": 60073.60755390666,
-    "accepted": false
-  },
-  {
-    "trial": 7,
+    "stage": "group_pattern",
     "group": 1,
-    "kind": 1,
-    "unit": 0.4899168153228894,
-    "power_kw": 60009.2892961024,
-    "accepted": false
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
   },
   {
-    "trial": 8,
-    "group": 2,
-    "kind": 1,
-    "unit": 0.4940922873678638,
-    "power_kw": 60074.72409112663,
-    "accepted": false
-  },
-  {
-    "trial": 9,
-    "group": 3,
-    "kind": 1,
-    "unit": 0.4948075909061995,
-    "power_kw": 60083.044538636204,
-    "accepted": false
-  },
-  {
-    "trial": 10,
-    "group": 4,
-    "kind": 1,
-    "unit": 0.4935237409274879,
-    "power_kw": 60082.043940109215,
-    "accepted": false
-  },
-  {
-    "trial": 11,
-    "group": 5,
-    "kind": 1,
-    "unit": 0.49407065195548083,
-    "power_kw": 60101.73227379933,
-    "accepted": false
-  },
-  {
-    "trial": 12,
-    "group": 0,
-    "kind": 2,
-    "unit": 0.4934434445218202,
-    "power_kw": 60154.36448872616,
-    "accepted": false
-  },
-  {
-    "trial": 13,
+    "stage": "group_pattern",
     "group": 1,
-    "kind": 2,
-    "unit": 0.4934434445218202,
-    "power_kw": 60154.36448872616,
-    "accepted": false
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5061885027747354,
+    "power_kw": 60282.646528027944,
+    "count": 2404
   },
   {
-    "trial": 14,
-    "group": 2,
-    "kind": 2,
-    "unit": 0.4934434445218202,
-    "power_kw": 60154.36448872616,
-    "accepted": false
-  },
-  {
-    "trial": 15,
-    "group": 3,
-    "kind": 2,
-    "unit": 0.4934434445218202,
-    "power_kw": 60154.36448872616,
-    "accepted": false
-  },
-  {
-    "trial": 16,
-    "group": 4,
-    "kind": 2,
-    "unit": 0.4934434445218202,
-    "power_kw": 60154.36448872616,
-    "accepted": false
-  },
-  {
-    "trial": 17,
-    "group": 5,
-    "kind": 2,
-    "unit": 0.4934434445218202,
-    "power_kw": 60154.36448872616,
-    "accepted": false
-  },
-  {
-    "trial": 18,
-    "group": 0,
-    "kind": 3,
-    "unit": 0.4902781565234486,
-    "power_kw": 60073.60755390666,
-    "accepted": false
-  },
-  {
-    "trial": 20,
-    "group": 2,
-    "kind": 3,
-    "unit": 0.4940922873678638,
-    "power_kw": 60074.72409112663,
-    "accepted": false
-  },
-  {
-    "trial": 24,
-    "group": 0,
-    "kind": 4,
-    "unit": 0.49219550215053204,
-    "power_kw": 60104.94381404329,
-    "accepted": false
-  },
-  {
-    "trial": 25,
+    "stage": "group_pattern",
     "group": 1,
-    "kind": 4,
-    "unit": 0.49171537250761854,
-    "power_kw": 60081.75556205356,
-    "accepted": false
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "trial": 26,
-    "group": 2,
-    "kind": 4,
-    "unit": 0.4907919877996887,
-    "power_kw": 60076.71630890022,
-    "accepted": false
-  },
-  {
-    "trial": 27,
-    "group": 3,
-    "kind": 4,
-    "unit": 0.48946585083308103,
-    "power_kw": 60064.19536027629,
-    "accepted": false
-  },
-  {
-    "trial": 28,
-    "group": 4,
-    "kind": 4,
-    "unit": 0.4953764076942929,
-    "power_kw": 60159.49167577511,
-    "accepted": true
-  },
-  {
-    "trial": 29,
-    "group": 5,
-    "kind": 4,
-    "unit": 0.4983825276376836,
-    "power_kw": 60166.17725464441,
-    "accepted": true
-  },
-  {
-    "trial": 30,
-    "group": 0,
-    "kind": 0,
-    "unit": 0.4967583363482131,
-    "power_kw": 60106.13402388849,
-    "accepted": false
-  },
-  {
-    "trial": 31,
+    "stage": "group_pattern",
     "group": 1,
-    "kind": 0,
-    "unit": 0.4963785831625782,
-    "power_kw": 60078.48982374435,
-    "accepted": false
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
   },
   {
-    "trial": 32,
-    "group": 2,
-    "kind": 0,
-    "unit": 0.49878811837692316,
-    "power_kw": 60152.44119806191,
-    "accepted": true
-  },
-  {
-    "trial": 33,
-    "group": 3,
-    "kind": 0,
-    "unit": 0.49863540568603965,
-    "power_kw": 60135.161713101035,
-    "accepted": false
-  },
-  {
-    "trial": 34,
-    "group": 4,
-    "kind": 0,
-    "unit": 0.49806245611629407,
-    "power_kw": 60144.848357268136,
-    "accepted": false
-  },
-  {
-    "trial": 35,
-    "group": 5,
-    "kind": 0,
-    "unit": 0.4978691135149805,
-    "power_kw": 60124.432129144174,
-    "accepted": false
-  },
-  {
-    "trial": 36,
-    "group": 0,
-    "kind": 1,
-    "unit": 0.49876298732251145,
-    "power_kw": 60007.10535251063,
-    "accepted": false
-  },
-  {
-    "trial": 37,
+    "stage": "group_pattern",
     "group": 1,
-    "kind": 1,
-    "unit": 0.4959362127042553,
-    "power_kw": 60087.00102948569,
-    "accepted": false
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050766630473562,
+    "power_kw": 60420.42999939138,
+    "count": 2404,
+    "reason": "no_improvement"
   },
   {
-    "trial": 38,
+    "stage": "group_pattern",
     "group": 2,
-    "kind": 1,
-    "unit": 0.4984249869242186,
-    "power_kw": 60144.9400867856,
-    "accepted": false
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5060337348992767,
+    "power_kw": 60364.87936534579,
+    "count": 2404
   },
   {
-    "trial": 39,
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5059634094943007,
+    "power_kw": 60352.699300940636,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5042475057939312,
+    "power_kw": 60494.46042915277,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5051396478033671,
+    "power_kw": 60427.96462991384,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050998192661403,
+    "power_kw": 60423.200091138744,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
     "group": 3,
-    "kind": 1,
-    "unit": 0.498651139746848,
-    "power_kw": 60114.611853273054,
-    "accepted": false
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "trial": 40,
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5065375088806261,
+    "power_kw": 60317.74549685499,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050692757446299,
+    "power_kw": 60419.54628402713,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
     "group": 4,
-    "kind": 1,
-    "unit": 0.49854813732638753,
-    "power_kw": 60148.11981247598,
-    "accepted": false
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "trial": 41,
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5058163437037867,
+    "power_kw": 60352.37133931546,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5051313426322276,
+    "power_kw": 60426.97111338818,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
     "group": 5,
-    "kind": 1,
-    "unit": 0.49833211249757636,
-    "power_kw": 60133.16183472026,
-    "accepted": false
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "trial": 42,
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5062010119317312,
+    "power_kw": 60310.515929660876,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5051381186348051,
+    "power_kw": 60427.78170120456,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
     "group": 0,
-    "kind": 2,
-    "unit": 0.4986505527742858,
-    "power_kw": 60135.851174124604,
-    "accepted": false
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "trial": 43,
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507204054017356,
+    "power_kw": 60225.578810933155,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065042289955061,
+    "power_kw": 60313.78257682311,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
     "group": 1,
-    "kind": 2,
-    "unit": 0.49858437670098477,
-    "power_kw": 60127.870526207575,
-    "accepted": false
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "trial": 44,
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076100354263329,
+    "power_kw": 60173.91123627152,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "ground clearance during full rotation"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5064918580052874,
+    "power_kw": 60312.30945740655,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
     "group": 2,
-    "kind": 2,
-    "unit": 0.49767692505281497,
-    "power_kw": 60018.43441517061,
-    "accepted": false
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5074528689084694,
+    "power_kw": 60256.226804850085,
+    "count": 2404
   },
   {
-    "trial": 45,
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5073829282719259,
+    "power_kw": 60244.12031160248,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5056508684334522,
+    "power_kw": 60385.86714083977,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065511245341902,
+    "power_kw": 60319.36682896179,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065102754457429,
+    "power_kw": 60314.5025792714,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
     "group": 3,
-    "kind": 2,
-    "unit": 0.49694079940173497,
-    "power_kw": 59929.65973648527,
-    "accepted": false
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5079121530548504,
+    "power_kw": 60209.17432039733,
+    "count": 2404
   },
   {
-    "trial": 46,
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5078893128355011,
+    "power_kw": 60200.53590633816,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5051264625477362,
+    "power_kw": 60426.38732715338,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065761391781172,
+    "power_kw": 60322.34553616438,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5064825586158668,
+    "power_kw": 60311.202099719274,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
     "group": 4,
-    "kind": 2,
-    "unit": 0.500393544293991,
-    "power_kw": 60171.205615193445,
-    "accepted": true
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "trial": 47,
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5072342872024378,
+    "power_kw": 60243.734116745036,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065424588130073,
+    "power_kw": 60318.33492756122,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
     "group": 5,
-    "kind": 2,
-    "unit": 0.5027579408675678,
-    "power_kw": 60155.88271831016,
-    "accepted": true
+    "variable": "width",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "stage": "position_exchange",
-    "trial": 0,
-    "unit": 0.5027316809564365,
-    "power_kw": 60152.74067319104,
-    "accepted": false
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "pair spacing"
+    ]
   },
   {
-    "stage": "position_exchange",
-    "trial": 1,
-    "unit": 0.5026778443544334,
-    "power_kw": 60146.299027912464,
-    "accepted": false
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076223200166197,
+    "power_kw": 60201.82123413924,
+    "count": 2404
   },
   {
-    "stage": "position_exchange",
-    "trial": 2,
-    "unit": 0.5026915241855712,
-    "power_kw": 60147.93584406322,
-    "accepted": false
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "stage": "position_exchange",
-    "trial": 3,
-    "unit": 0.5026923660690225,
-    "power_kw": 60148.036576917024,
-    "accepted": false
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": -0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5065512325119487,
+    "power_kw": 60319.379686795306,
+    "count": 2404
   },
   {
-    "stage": "position_exchange",
-    "trial": 4,
-    "unit": 0.50270141977267,
-    "power_kw": 60149.119868677364,
-    "accepted": false
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": 0.15,
+    "step": 0.15,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
   },
   {
-    "stage": "position_exchange",
-    "trial": 5,
-    "unit": 0.5026979325218973,
-    "power_kw": 60148.702612913825,
-    "accepted": false
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "stage": "position_exchange",
-    "trial": 6,
-    "unit": 0.50267539506253,
-    "power_kw": 60146.00596577559,
-    "accepted": false
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5077054289514612,
+    "power_kw": 60241.90455326354,
+    "count": 2404,
+    "reason": "no_improvement"
   },
   {
-    "stage": "position_exchange",
-    "trial": 7,
-    "unit": 0.5026908300214057,
-    "power_kw": 60147.85278608496,
-    "accepted": false
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5081380348941078,
+    "power_kw": 60178.66632382187,
+    "count": 2404,
+    "reason": "insufficient_capacity"
   },
   {
-    "stage": "individual",
-    "trial": 0,
-    "mirror": 2403,
-    "unit": 0.5027663709547876,
-    "power_kw": 60155.82197773162,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "stage": "individual",
-    "trial": 1,
-    "mirror": 2402,
-    "unit": 0.5027728338420567,
-    "power_kw": 60155.525830682695,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507921295781907,
+    "power_kw": 60210.25812208194,
+    "count": 2404
   },
   {
-    "stage": "individual",
-    "trial": 2,
-    "mirror": 2400,
-    "unit": 0.5027803167129042,
-    "power_kw": 60155.35169248224,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079041446709288,
+    "power_kw": 60208.224986579145,
+    "count": 2404,
+    "reason": "no_improvement"
   },
   {
-    "stage": "individual",
-    "trial": 3,
-    "mirror": 2400,
-    "unit": 0.5027875768085812,
-    "power_kw": 60155.15086889836,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "stage": "individual",
-    "trial": 4,
-    "mirror": 2398,
-    "unit": 0.5027956758438937,
-    "power_kw": 60155.05038612776,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5075977385286525,
+    "power_kw": 60262.41702913028,
+    "count": 2404,
+    "reason": "no_improvement"
   },
   {
-    "stage": "individual",
-    "trial": 5,
-    "mirror": 2398,
-    "unit": 0.502802712302485,
-    "power_kw": 60154.82274326737,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082797452460556,
+    "power_kw": 60162.11381021887,
+    "count": 2404,
+    "reason": "insufficient_capacity"
   },
   {
-    "stage": "individual",
-    "trial": 6,
-    "mirror": 2402,
-    "unit": 0.5028090728830004,
-    "power_kw": 60154.51421052137,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
   },
   {
-    "stage": "individual",
-    "trial": 7,
-    "mirror": 2395,
-    "unit": 0.5028188850100556,
-    "power_kw": 60154.61857567191,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079222801875349,
+    "power_kw": 60210.37481598205,
+    "count": 2404
   },
   {
-    "stage": "individual",
-    "trial": 8,
-    "mirror": 2394,
-    "unit": 0.5028267807798447,
-    "power_kw": 60154.49364020766,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507901741188498,
+    "power_kw": 60207.94007177295,
+    "count": 2404,
+    "reason": "no_improvement"
   },
   {
-    "stage": "individual",
-    "trial": 9,
-    "mirror": 2394,
-    "unit": 0.5028341412819789,
-    "power_kw": 60154.304636811394,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082239267420517,
+    "power_kw": 60189.20691074815,
+    "count": 2404,
+    "reason": "insufficient_capacity"
   },
   {
-    "stage": "individual",
-    "trial": 10,
-    "mirror": 2394,
-    "unit": 0.5028409160623082,
-    "power_kw": 60154.04553315042,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5075951096516778,
+    "power_kw": 60228.4466113579,
+    "count": 2404,
+    "reason": "no_improvement"
   },
   {
-    "stage": "individual",
-    "trial": 11,
-    "mirror": 2402,
-    "unit": 0.5028470067523189,
-    "power_kw": 60153.70456550536,
-    "accepted": true
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5081980458041688,
+    "power_kw": 60184.8725940634,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076132051435281,
+    "power_kw": 60231.86148697081,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079197065869989,
+    "power_kw": 60210.06973495107,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079047498406297,
+    "power_kw": 60208.29672490593,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5074630212787518,
+    "power_kw": 60246.60679884944,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5083560384003903,
+    "power_kw": 60170.945101661775,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5079274270906643,
+    "power_kw": 60210.98494272515,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5078964191514317,
+    "power_kw": 60207.30918421584,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076034927340324,
+    "power_kw": 60223.802799792866,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5081502057539519,
+    "power_kw": 60184.97161859556,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079140638901977,
+    "power_kw": 60209.40083558864,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507447525432355,
+    "power_kw": 60233.81378988574,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082822364234372,
+    "power_kw": 60171.23805264381,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079186790966427,
+    "power_kw": 60209.94793367972,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 0,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5077206690290492,
+    "power_kw": 60243.71286817822,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.508153355148397,
+    "power_kw": 60180.48069788473,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.507936434454387,
+    "power_kw": 60212.05269810231,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 0,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079192621292445,
+    "power_kw": 60210.017047819536,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076130065819742,
+    "power_kw": 60264.22966485864,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082942651220632,
+    "power_kw": 60163.8324433949,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5079382424723934,
+    "power_kw": 60212.26702506942,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 1,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079111588419122,
+    "power_kw": 60209.05646391418,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082392643836615,
+    "power_kw": 60191.023355106234,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076105743032335,
+    "power_kw": 60230.28156193737,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082133146136687,
+    "power_kw": 60186.680848467375,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076284897601229,
+    "power_kw": 60233.67511376437,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079350073563988,
+    "power_kw": 60211.8835263449,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 2,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079194720056183,
+    "power_kw": 60210.041927088714,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5074795504930549,
+    "power_kw": 60248.56916661431,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5083694905675263,
+    "power_kw": 60172.53735108756,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079358745387826,
+    "power_kw": 60211.98632430907,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 3,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079121530548504,
+    "power_kw": 60209.17432039733,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5076187626451167,
+    "power_kw": 60225.6144739186,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5081655196448492,
+    "power_kw": 60186.78538562466,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079293686071614,
+    "power_kw": 60211.21509493655,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 4,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "width",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5074630748347325,
+    "power_kw": 60235.65949759029,
+    "count": 2404,
+    "reason": "no_improvement"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5082969931411486,
+    "power_kw": 60172.984975732325,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "height",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "geometry",
+    "violations": [
+      "mirror dimensions"
+    ]
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": -0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5079336041197817,
+    "power_kw": 60211.71718317397,
+    "count": 2404
+  },
+  {
+    "stage": "group_pattern",
+    "group": 5,
+    "variable": "z",
+    "delta": 0.05,
+    "step": 0.05,
+    "sweep": 1,
+    "accepted": false,
+    "rays": 512,
+    "reason": "unchanged"
+  },
+  {
+    "stage": "coupled_tower",
+    "delta": [
+      0,
+      -4
+    ],
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4995759286511374,
+    "power_kw": 59344.66973408486,
+    "count": 2407,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "coupled_tower",
+    "delta": [
+      0,
+      4
+    ],
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.497674356416822,
+    "power_kw": 59088.02918120625,
+    "count": 2406,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "coupled_tower",
+    "delta": [
+      -3,
+      0
+    ],
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.498433907297961,
+    "power_kw": 59229.73656320728,
+    "count": 2408,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "coupled_tower",
+    "delta": [
+      3,
+      0
+    ],
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49850989914798777,
+    "power_kw": 59264.269239027555,
+    "count": 2409,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "regional_standardization",
+    "relative_tolerance": 0.0002,
+    "accepted": true,
+    "capacity_restoration_trials": [
+      {
+        "group": 2,
+        "increment": 0.005,
+        "unit": 0.5079499579350002,
+        "power_kw": 60197.817638877896
+      },
+      {
+        "group": 2,
+        "increment": 0.01,
+        "unit": 0.5079203094894496,
+        "power_kw": 60200.11999896627
+      },
+      {
+        "group": 2,
+        "increment": 0.025,
+        "unit": 0.5078316239855211,
+        "power_kw": 60207.05381030954
+      },
+      {
+        "group": 4,
+        "increment": 0.005,
+        "unit": 0.5079573586732806,
+        "power_kw": 60198.11846633068
+      },
+      {
+        "group": 4,
+        "increment": 0.01,
+        "unit": 0.5079343384450284,
+        "power_kw": 60200.63031426513
+      },
+      {
+        "group": 4,
+        "increment": 0.025,
+        "unit": 0.5078640191879856,
+        "power_kw": 60208.013802714086
+      },
+      {
+        "group": 5,
+        "increment": 0.005,
+        "unit": 0.5079431853119557,
+        "power_kw": 60199.373938545396
+      },
+      {
+        "group": 5,
+        "increment": 0.01,
+        "unit": 0.5079056036945421,
+        "power_kw": 60203.094542678264
+      },
+      {
+        "group": 5,
+        "increment": 0.025,
+        "unit": 0.5077938999329654,
+        "power_kw": 60214.372549548876
+      }
+    ],
+    "regional_capacity_restoration": {
+      "group": 4,
+      "increment": 0.01
+    },
+    "unit": 0.5079343384450284,
+    "power_kw": 60200.63031426513,
+    "before_types": 10,
+    "after_types": 5,
+    "relative_loss": 7.686027628017733e-06
+  },
+  {
+    "stage": "stop",
+    "group_sweeps": [
+      {
+        "step": 0.15,
+        "sweeps": 2,
+        "stop": "budget"
+      },
+      {
+        "step": 0.05,
+        "sweeps": 2,
+        "stop": "budget"
+      }
+    ],
+    "global_optimality_claim": false
   }
 ]

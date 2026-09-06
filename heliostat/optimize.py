@@ -200,6 +200,53 @@ def design_task(args):
     return {'parameters':p,'field':field,'unit':e.unit_power,'power_kw':e.annual_power_kw}
 
 
+def tower_restart_task(args):
+    """Rank even near-feasible coarse layouts; coarse capacity is not a certificate."""
+    p,site,budget=args
+    field=candidates(p,site)
+    if field is None:return None
+    e=evaluate(field,site,rays=budget.search_rays,seed=budget.seed)
+    capacity=e.annual_power_kw
+    if capacity>=budget.target_kw:
+        field,e=trim_field(field,site,budget.target_kw,budget.search_rays,budget.seed,e)
+    return dict(parameters=p,field=field,unit=e.unit_power,power_kw=e.annual_power_kw,
+                full_capacity_kw=capacity,merit=e.unit_power*min(1.,capacity/budget.target_kw)**8)
+
+
+def tower_phase_search(parameters,site,budget,progress=print):
+    """Regenerate tower-centred layouts; compare promoted candidates at one fidelity."""
+    p=np.array(parameters)
+    incumbent=select_design(p,site,budget,budget.refinement_rays)
+    if incumbent is None:raise RuntimeError('Tower restart incumbent is infeasible')
+    field,best=incumbent
+    starts=[]
+    for tower_y in (-120.,-80.,-40.,0.,40.,80.,120.):
+        for phase in (0.,.25,.5,.75):
+            q=p.copy();q[1]=(tower_y+245.)/450.;q[9]=phase;starts.append(q)
+    records=[];ranked=[]
+    with ProcessPoolExecutor(max_workers=budget.workers) as executor:
+        for q,result in zip(starts,executor.map(tower_restart_task,[(q,site,budget) for q in starts])):
+            row=dict(stage='tower_phase_restart',parameters=q,rays=budget.search_rays,accepted=False)
+            if result is None:row['reason']='empty_layout'
+            else:
+                ranked.append(result)
+                row.update(unit=result['unit'],power_kw=result['power_kw'],count=len(result['field']),
+                           full_capacity_kw=result['full_capacity_kw'],merit=result['merit'])
+            records.append(row)
+    for item in sorted(ranked,key=lambda x:x['merit'],reverse=True)[:6]:
+        q=item['parameters'];result=select_design(q,site,budget,budget.refinement_rays)
+        row=dict(stage='tower_phase_promote',parameters=q,rays=budget.refinement_rays,accepted=False)
+        if result is None:row['reason']='insufficient_capacity'
+        else:
+            f,e=result
+            accepted=e.unit_power>best.unit_power+1e-8
+            row.update(unit=e.unit_power,power_kw=e.annual_power_kw,count=len(f),accepted=accepted)
+            if accepted:p,field,best=q,f,e
+        records.append(row)
+    progress(f'Q2 tower/phase: {len(starts)} restarts, {min(6,len(ranked))} promoted; best {best.unit_power:.6f}',flush=True)
+    return p,field,best,records
+
+
 def capacity_task(args):
     p,site,budget=args
     field=candidates(p,site)
@@ -304,6 +351,9 @@ def optimize_q2(outdir,site=Site(),budget=SearchBudget(),progress=print,resume=F
     best['parameters']=np.r_[best['parameters'],1/3] if len(best['parameters'])==11 else np.array(best['parameters'])
     rng=np.random.default_rng(budget.seed+1)
     progress(f"Q2: fine incumbent {best['unit']:.6f}; starting {budget.refinement_trials} layout trials",flush=True)
+    p,f,e,restarts=tower_phase_search(best['parameters'],site,budget,progress)
+    best=dict(parameters=p,field=f,unit=e.unit_power,power_kw=e.annual_power_kw)
+    history.extend(restarts)
     # Differential mutations between elite basins plus coordinate pattern moves.
     for k in range(budget.refinement_trials):
         p=np.array(best['parameters']).copy()
@@ -349,6 +399,51 @@ def q3_groups(field):
     return radial*2+side
 
 
+def height_profile_search(field, site=Site(), budget=SearchBudget(), progress=print):
+    """Search stepped and smooth installation-height profiles before local Q3 moves.
+
+    The former Q3 routine only accepted a handful of fixed +/-0.4 m group moves,
+    which could leave a high outer band at an arbitrary intermediate height.  This
+    pass evaluates a small, reproducible profile family with the same interacting
+    ray tracer.  Horizontal positions and dimensions remain fixed, so all spacing
+    constraints are unchanged; a profile is accepted only when it is fully feasible
+    and improves unit-area power at the requested capacity.
+    """
+    base = evaluate(field, site, rays=budget.refinement_rays, seed=budget.seed)
+    best_field, best = field, base
+    radius = np.linalg.norm(field.centers[:, :2]-field.tower, axis=1)
+    q1, q2 = np.quantile(radius, [1/3, 2/3])
+    profiles = [('baseline', np.zeros(len(field)))]
+    # Step profiles: independently sweep the middle and outer radial thirds.
+    for level in (4.0, 4.5, 5.0, 5.5, 6.0):
+        for mask_name, mask in (('middle', radius >= q1), ('outer', radius >= q2)):
+            dz = np.zeros(len(field)); dz[mask] = level-field.centers[mask, 2]
+            profiles.append((f'{mask_name}_{level:.1f}', dz))
+    # Smooth profiles include convex and concave ramps; the endpoints are swept.
+    t = np.clip((radius-radius.min())/max(radius.max()-radius.min(), 1e-12), 0, 1)
+    for exponent in (0.5, 1.0, 2.0):
+        for edge in (4.5, 5.0, 5.5, 6.0):
+            z = field.centers[:, 2].min() + (edge-field.centers[:, 2].min())*t**exponent
+            profiles.append((f'smooth_{exponent:g}_{edge:.1f}', z-field.centers[:, 2]))
+    # Preserve existing zone boundaries as well as testing fresh radial thirds.
+    raised=field.centers[:,2]>field.centers[:,2].min()+1e-6
+    if raised.any() and not raised.all():
+        for level in (4.,4.5,5.,5.5,6.):
+            dz=np.zeros(len(field));dz[raised]=level-field.centers[raised,2]
+            profiles.append((f'existing_outer_{level:.1f}',dz))
+    from .refine import neighbourhood
+    moves=[]
+    for label,dz in profiles[1:]:
+        centers=field.centers.copy()
+        centers[:,2]=np.maximum(np.clip(centers[:,2]+dz,2,6),field.heights/2+.1)
+        moves.append((dict(profile=label),field.copy(centers=centers,name='q3')))
+    history=[]
+    with ProcessPoolExecutor(max_workers=budget.workers) as executor:
+        best_field,best,_=neighbourhood(field,base,moves,site,budget,'height_profile',executor,history)
+    progress(f'Q3 height profiles: {len(moves)} candidates, best {best.unit_power:.6f}',flush=True)
+    return best_field,best,history
+
+
 def replenish(field,e,pool,pool_density,site,budget,rays=None):
     """Restore capacity with explicitly spaced unused candidate sites, then retrace."""
     rays=rays or budget.refinement_rays
@@ -390,6 +485,13 @@ def optimize_q3(q2,outdir,site=Site(),budget=SearchBudget(),progress=print):
     pool=candidates(config['parameters'],site)
     pool_upper=evaluate(pool,site,rays=budget.refinement_rays,seed=budget.seed,interactions=False)
     pool_density=pool_upper.per_mirror_kw/pool.area
+    # First sweep a reproducible family of height profiles and check the whole
+    # field before the local group moves.
+    profile_field, profile_eval, profile_history = height_profile_search(field,site,budget,progress)
+    if profile_eval.unit_power>best.unit_power and profile_eval.annual_power_kw>=budget.target_kw:
+        field,best=profile_field,profile_eval
+    history.extend(profile_history)
+    groups=q3_groups(field)
     # Uniform Q2 is the feasible incumbent; all accepted changes improve its ratio.
     for k in range(budget.q3_trials):
         g=k%6
@@ -467,13 +569,33 @@ def optimize_q3(q2,outdir,site=Site(),budget=SearchBudget(),progress=print):
         if not len(eligible):break
         i=eligible[np.argsort(density[eligible])[k%min(len(eligible),24)]]
         step=min(.3,max(.025,(best.annual_power_kw-budget.target_kw)/(field.widths[i]*max(density[i],.1))))
-        h=field.heights.copy();h[i]=max(2,h[i]-step)
-        trial=field.copy(heights=h)
-        e=evaluate(trial,site,rays=budget.refinement_rays,seed=budget.seed)
-        accepted=e.annual_power_kw>=budget.target_kw and e.unit_power>best.unit_power
-        history.append(dict(stage='individual',trial=k,mirror=int(i),unit=e.unit_power,power_kw=e.annual_power_kw,accepted=accepted))
-        if accepted:field,best=trial,e
+        # Evaluate both directions.  The old routine only shrank a mirror,
+        # which made the final heterogeneous dimensions depend on a one-sided
+        # coordinate rule rather than on the interacting optical objective.
+        trials=[]
+        for direction in (-1,1):
+            h=field.heights.copy();h[i]=np.clip(h[i]+direction*step,2,min(field.widths[i],8))
+            if abs(h[i]-field.heights[i])<1e-10:continue
+            trial=field.copy(heights=h)
+            if not validate_field(trial,site,whole_mirror=True)['valid']:continue
+            et=evaluate(trial,site,rays=budget.refinement_rays,seed=budget.seed)
+            trials.append((et.unit_power,trial,et,direction))
+        feasible=[item for item in trials if item[2].annual_power_kw>=budget.target_kw]
+        winner=max(feasible,key=lambda x:x[0]) if feasible else None
+        for _,trial,e,direction in trials:
+            accepted=winner is not None and trial is winner[1] and e.unit_power>best.unit_power
+            history.append(dict(stage='individual',trial=k,mirror=int(i),direction=direction,
+                                unit=e.unit_power,power_kw=e.annual_power_kw,accepted=accepted))
+        if winner is not None and winner[2].unit_power>best.unit_power:
+            field,best=winner[1],winner[2]
     field,best=trim_field(field,site,budget.target_kw,budget.refinement_rays,budget.seed,best)
+    # Recheck profiles after local dimension changes, then use complete symmetric
+    # sweeps and relocate mirrors with the tower before a regional-size comparison.
+    field,best,profiles=height_profile_search(field,site,budget,progress)
+    history.extend(profiles)
+    from .refine import polish_q3
+    field,best,polished=polish_q3(field,config['parameters'],site,budget,progress)
+    history.extend(polished)
     field.name='q3'
     save_field(field,outdir/'q3.npz')
     write_json(history,outdir/'q3_search_history.json')

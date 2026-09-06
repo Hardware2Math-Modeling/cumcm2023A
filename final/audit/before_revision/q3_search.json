@@ -1,0 +1,19 @@
+{
+  "seconds": 1470.428673563,
+  "unit": 0.5028470067523189,
+  "power_kw": 60153.70456550536,
+  "groups": 6,
+  "distinct_dimensions": 9,
+  "distinct_heights": 2,
+  "constraints": {
+    "valid": true,
+    "violations": [],
+    "count": 2404,
+    "total_area_m2": 119626.25561602385,
+    "minimum_spacing_margin_m": 0.050023605171347185,
+    "minimum_ground_clearance_m": 0.10000000000000009,
+    "minimum_site_margin_m": 0.10560033309395944,
+    "minimum_exclusion_margin_m": 0.1925836066778972,
+    "whole_mirror_footprint": true
+  }
+}

@@ -2,109 +2,109 @@
   {
     "problem": "q1",
     "scenario": "shaft_0m",
-    "power_MW": 35.249313336606164,
-    "paired_change_percent": 0.028584212847970747
+    "power_MW": 35.2693228098662,
+    "paired_change_percent": 0.02849822715560446
   },
   {
     "problem": "q1",
     "scenario": "shaft_3m",
-    "power_MW": 35.233712855005656,
-    "paired_change_percent": -0.015685985343860676
+    "power_MW": 35.25373896512793,
+    "paired_change_percent": -0.01569963267227248
   },
   {
     "problem": "q1",
     "scenario": "sun_4.2mrad",
-    "power_MW": 35.45625318151117,
-    "paired_change_percent": 0.6158268494748098
+    "power_MW": 35.46347897047668,
+    "paired_change_percent": 0.5791509650069804
   },
   {
     "problem": "q1",
     "scenario": "sun_5.1mrad",
-    "power_MW": 35.000001039311236,
-    "paired_change_percent": -0.6789006645770312
+    "power_MW": 35.032800364648146,
+    "paired_change_percent": -0.6423109380705228
   },
   {
     "problem": "q1",
     "scenario": "slope_0.5mrad",
-    "power_MW": 35.095962464487144,
-    "paired_change_percent": -0.4065865514557232
+    "power_MW": 35.07891492291967,
+    "paired_change_percent": -0.5115239072228772
   },
   {
     "problem": "q1",
     "scenario": "slope_1mrad",
-    "power_MW": 34.58007098061936,
-    "paired_change_percent": -1.870555345570335
+    "power_MW": 34.556168602210434,
+    "paired_change_percent": -1.994102115378571
   },
   {
     "problem": "q2",
     "scenario": "shaft_0m",
-    "power_MW": 60.01085181308512,
-    "paired_change_percent": 0.028021706708170058
+    "power_MW": 60.069359354756955,
+    "paired_change_percent": 0.027796656268197495
   },
   {
     "problem": "q2",
     "scenario": "shaft_3m",
-    "power_MW": 59.98532753018964,
-    "paired_change_percent": -0.014522990565402072
+    "power_MW": 60.04394293183809,
+    "paired_change_percent": -0.014526897882671808
   },
   {
     "problem": "q2",
     "scenario": "sun_4.2mrad",
-    "power_MW": 60.431430569220076,
-    "paired_change_percent": 0.7290559309695022
+    "power_MW": 60.50015837588662,
+    "paired_change_percent": 0.7451653338794495
   },
   {
     "problem": "q2",
     "scenario": "sun_5.1mrad",
-    "power_MW": 59.53555560340365,
-    "paired_change_percent": -0.7642173324445389
+    "power_MW": 59.56370132578744,
+    "paired_change_percent": -0.8142276143862981
   },
   {
     "problem": "q2",
     "scenario": "slope_0.5mrad",
-    "power_MW": 59.660556150003806,
-    "paired_change_percent": -0.5558623931143036
+    "power_MW": 59.745757468295935,
+    "paired_change_percent": -0.5110668182919831
   },
   {
     "problem": "q2",
     "scenario": "slope_1mrad",
-    "power_MW": 58.57263007789774,
-    "paired_change_percent": -2.3692526295147065
+    "power_MW": 58.70879922136119,
+    "paired_change_percent": -2.2378148605484927
   },
   {
     "problem": "q3",
     "scenario": "shaft_0m",
-    "power_MW": 60.02430937313646,
-    "paired_change_percent": 0.02801527173086349
+    "power_MW": 60.12831216103567,
+    "paired_change_percent": 0.027764411869490857
   },
   {
     "problem": "q3",
     "scenario": "shaft_3m",
-    "power_MW": 59.99878456437054,
-    "paired_change_percent": -0.014520760548564215
+    "power_MW": 60.10289858597248,
+    "paired_change_percent": -0.014512894908658147
   },
   {
     "problem": "q3",
     "scenario": "sun_4.2mrad",
-    "power_MW": 60.45631685099181,
-    "paired_change_percent": 0.7479377671949505
+    "power_MW": 60.564492375446626,
+    "paired_change_percent": 0.7533815156951729
   },
   {
     "problem": "q3",
     "scenario": "sun_5.1mrad",
-    "power_MW": 59.53702007988073,
-    "paired_change_percent": -0.7840320700307934
+    "power_MW": 59.61834325707248,
+    "paired_change_percent": -0.8206054749550717
   },
   {
     "problem": "q3",
     "scenario": "slope_0.5mrad",
-    "power_MW": 59.669806486363626,
-    "paired_change_percent": -0.5627490459649942
+    "power_MW": 59.80074216567412,
+    "paired_change_percent": -0.5171717944997933
   },
   {
     "problem": "q3",
     "scenario": "slope_1mrad",
-    "power_MW": 58.569166847270566,
-    "paired_change_percent": -2.396919230972494
+    "power_MW": 58.755814294710575,
+    "paired_change_percent": -2.2554843322641682
   }
 ]

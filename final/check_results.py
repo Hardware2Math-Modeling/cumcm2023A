@@ -21,6 +21,7 @@ def main():
     _,_,dni=time_grid()
     report={}
     for key in ('q1','q2','q3'):
+        assert hashlib.sha256((data/f'{key}.npz').read_bytes()).hexdigest()==audit[key]['design_sha256'],f'Stale verification for {key}'
         f=load_field(data/f'{key}.npz')
         z=np.load(data/f'{key}_optics.npz')
         check=validate_field(f,uniform=key=='q2',whole_mirror=key!='q1')
@@ -46,6 +47,8 @@ def main():
         report[key]=dict(count=len(f),area=float(f.area.sum()),power_MW=audit[key]['power_MW'],valid=True)
     assert audit['q3_improves_q2']
     assert audit['paired_q3_minus_q2']['lower_95_one_sided_kw']>0
+    if 'revision_q3_comparison' in audit:
+        assert audit['revision_q3_comparison']['paired_unit_gain']['lower_95_one_sided_kw']>0
     result=dict(checks='passed',input_unchanged=True,computational_source_unchanged=True,designs=report)
     (data/'paper_consistency.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(result,ensure_ascii=False,indent=2))

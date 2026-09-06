@@ -1,0 +1,268 @@
+[
+  {
+    "stage": "height_profile",
+    "profile": "middle_4.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4984337077271135,
+    "power_kw": 59625.758128206195,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "outer_4.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49997445806277685,
+    "power_kw": 59810.07232170074,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "middle_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49782360520882735,
+    "power_kw": 59552.77384840172,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "outer_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5011919846444739,
+    "power_kw": 59955.72046778213,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "middle_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4971936193487774,
+    "power_kw": 59477.41099887291,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "outer_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5019085364884363,
+    "power_kw": 60041.43888183011,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "middle_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49649031682741773,
+    "power_kw": 59393.27755167734,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "outer_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5021798744940851,
+    "power_kw": 60073.8980314522,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "middle_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49570013911501537,
+    "power_kw": 59298.75155067141,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "outer_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5021211026249844,
+    "power_kw": 60066.86737281613,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_0.5_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.498894089021089,
+    "power_kw": 59680.831818560146,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_0.5_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4989373293645509,
+    "power_kw": 59686.00449894004,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_0.5_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4989785269291209,
+    "power_kw": 59690.93280933006,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_0.5_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.49901266551379503,
+    "power_kw": 59695.01668038665,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_1_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.4997742143177675,
+    "power_kw": 59786.117912274734,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_1_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5003259157015865,
+    "power_kw": 59852.11588303918,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_1_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5008790912547347,
+    "power_kw": 59918.290203160635,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_1_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5014328946136717,
+    "power_kw": 59984.539625337835,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_2_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5008566502110848,
+    "power_kw": 59915.605665136674,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_2_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5020302103799336,
+    "power_kw": 60055.99427387616,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_2_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5031902819805284,
+    "power_kw": 60194.76929570181,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "smooth_2_6.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5043362125244583,
+    "power_kw": 60331.85267586818,
+    "count": 2404
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_4.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5006811349518159,
+    "power_kw": 59894.60943186686,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_4.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5028660569731793,
+    "power_kw": 60155.983472095555,
+    "count": 2404,
+    "reason": "insufficient_capacity"
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_5.0",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5043463074897447,
+    "power_kw": 60333.060298765966,
+    "count": 2404
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_5.5",
+    "accepted": false,
+    "rays": 512,
+    "unit": 0.5050731591672087,
+    "power_kw": 60420.01084332921,
+    "count": 2404
+  },
+  {
+    "stage": "height_profile",
+    "profile": "existing_outer_6.0",
+    "accepted": true,
+    "rays": 512,
+    "unit": 0.5051264625477362,
+    "power_kw": 60426.38732715338,
+    "count": 2404
+  }
+]

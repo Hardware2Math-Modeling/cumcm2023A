@@ -25,7 +25,7 @@ def score(task):
 
 def main():
     OUT.mkdir(parents=True,exist_ok=True)
-    f=load_field(ROOT/'final/data/q3.npz');r=np.linalg.norm(f.centers[:,:2]-f.tower,axis=1)
+    f=load_field(OUT/'before_revision/q3.npz');r=np.linalg.norm(f.centers[:,:2]-f.tower,axis=1)
     low=float(f.centers[:,2].min());elevated=f.centers[:,2]>low+.01
     designs={'q3_baseline':f}
     for height in [5.,5.5,6.]:
@@ -41,7 +41,7 @@ def main():
         designs[f'outer_mirror_height_{step:+.2f}']=f.copy(heights=hh)
     # Reverse only the twelve final individual perturbations, using the checkpoint
     # written at the last accepted group move and matching centers by identity.
-    group=load_field(ROOT/'final/data/q3_checkpoint.npz')
+    group=load_field(OUT/'before_revision/q3_group.npz')
     from scipy.spatial import cKDTree
     dist,ids=cKDTree(group.centers[:,:2]).query(f.centers[:,:2])
     assert dist.max()<1e-8
@@ -55,7 +55,7 @@ def main():
         for result in pool.map(score,tasks):
             results.append(result);print('HEIGHT',result['label'],result.get('power_MW'),result.get('unit'),flush=True)
             write_json(results,OUT/'height_screen.json')
-    p=np.array(json.loads((ROOT/'final/data/q2_search.json').read_text())['parameters'])
+    p=np.array(json.loads((OUT/'before_revision/q2_search.json').read_text())['parameters'])
     tasks=[]
     for y in [-160.,-120.,-80.,-40.,0.,40.,80.]:
         q=p.copy();q[1]=(y+245)/450

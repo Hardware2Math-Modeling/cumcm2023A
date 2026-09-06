@@ -79,9 +79,16 @@ def main():
               note='各项效率为五个规定时刻的面积加权均值，效率无量纲；功率先逐镜求和再对时刻平均。')
     f2,f3=fields['q2'],fields['q3']
     macros['QthreeTypes']=str(len(np.unique(np.c_[f3.widths,f3.heights],axis=0)))
+    macros['QthreeMinTypeCount']=str(np.unique(np.c_[f3.widths,f3.heights],axis=0,return_counts=True)[1].min())
     macros['QthreeZTypes']=str(len(np.unique(f3.centers[:,2])))
     macros['GainJ']=f'{100*(annual["q3"][6]/annual["q2"][6]-1):.3f}'
     macros['AreaSaving']=f'{100*(1-f3.area.sum()/f2.area.sum()):.3f}'
+    if 'revision_q3_comparison' in audit:
+        revision=audit['revision_q3_comparison']
+        macros['RevisionOldP']=f'{revision["old_power_MW"]:.4f}'
+        macros['RevisionOldJ']=f'{revision["old_unit_power"]:.5f}'
+        macros['RevisionGain']=f'{revision["relative_gain_percent"]:.3f}'
+        macros['RevisionLow']=f'{revision["paired_unit_gain"]["lower_95_one_sided_kw"]:.6f}'
     macros['PairedDiff']=f'{audit["paired_q3_minus_q2"]["mean_kw"]:.6f}'
     macros['PairedLow']=f'{audit["paired_q3_minus_q2"]["lower_95_one_sided_kw"]:.6f}'
     macros['LegacyP']=f'{legacy["power_MW"]:.4f}'
