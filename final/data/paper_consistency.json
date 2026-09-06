@@ -1,0 +1,25 @@
+{
+  "checks": "passed",
+  "input_unchanged": true,
+  "computational_source_unchanged": true,
+  "designs": {
+    "q1": {
+      "count": 1745,
+      "area": 62820.0,
+      "power_MW": 35.23492185785416,
+      "valid": true
+    },
+    "q2": {
+      "count": 2425,
+      "area": 121907.31310053126,
+      "power_MW": 60.058197812970334,
+      "valid": true
+    },
+    "q3": {
+      "count": 2404,
+      "area": 119626.25561602385,
+      "power_MW": 60.06680866592794,
+      "valid": true
+    }
+  }
+}

@@ -1,0 +1,506 @@
+[
+  {
+    "trial": 0,
+    "group": 0,
+    "kind": 0,
+    "unit": 0.4917081679005264,
+    "power_kw": 60073.887367480296,
+    "accepted": false
+  },
+  {
+    "trial": 1,
+    "group": 1,
+    "kind": 0,
+    "unit": 0.4911575549039591,
+    "power_kw": 60077.422948418396,
+    "accepted": false
+  },
+  {
+    "trial": 2,
+    "group": 2,
+    "kind": 0,
+    "unit": 0.4938546285459604,
+    "power_kw": 60102.885122952284,
+    "accepted": false
+  },
+  {
+    "trial": 3,
+    "group": 3,
+    "kind": 0,
+    "unit": 0.4944017064097101,
+    "power_kw": 60074.43804786811,
+    "accepted": false
+  },
+  {
+    "trial": 4,
+    "group": 4,
+    "kind": 0,
+    "unit": 0.49289438189108814,
+    "power_kw": 60099.497467450354,
+    "accepted": false
+  },
+  {
+    "trial": 5,
+    "group": 5,
+    "kind": 0,
+    "unit": 0.49299266809094217,
+    "power_kw": 60083.10396553505,
+    "accepted": false
+  },
+  {
+    "trial": 6,
+    "group": 0,
+    "kind": 1,
+    "unit": 0.4902781565234486,
+    "power_kw": 60073.60755390666,
+    "accepted": false
+  },
+  {
+    "trial": 7,
+    "group": 1,
+    "kind": 1,
+    "unit": 0.4899168153228894,
+    "power_kw": 60009.2892961024,
+    "accepted": false
+  },
+  {
+    "trial": 8,
+    "group": 2,
+    "kind": 1,
+    "unit": 0.4940922873678638,
+    "power_kw": 60074.72409112663,
+    "accepted": false
+  },
+  {
+    "trial": 9,
+    "group": 3,
+    "kind": 1,
+    "unit": 0.4948075909061995,
+    "power_kw": 60083.044538636204,
+    "accepted": false
+  },
+  {
+    "trial": 10,
+    "group": 4,
+    "kind": 1,
+    "unit": 0.4935237409274879,
+    "power_kw": 60082.043940109215,
+    "accepted": false
+  },
+  {
+    "trial": 11,
+    "group": 5,
+    "kind": 1,
+    "unit": 0.49407065195548083,
+    "power_kw": 60101.73227379933,
+    "accepted": false
+  },
+  {
+    "trial": 12,
+    "group": 0,
+    "kind": 2,
+    "unit": 0.4934434445218202,
+    "power_kw": 60154.36448872616,
+    "accepted": false
+  },
+  {
+    "trial": 13,
+    "group": 1,
+    "kind": 2,
+    "unit": 0.4934434445218202,
+    "power_kw": 60154.36448872616,
+    "accepted": false
+  },
+  {
+    "trial": 14,
+    "group": 2,
+    "kind": 2,
+    "unit": 0.4934434445218202,
+    "power_kw": 60154.36448872616,
+    "accepted": false
+  },
+  {
+    "trial": 15,
+    "group": 3,
+    "kind": 2,
+    "unit": 0.4934434445218202,
+    "power_kw": 60154.36448872616,
+    "accepted": false
+  },
+  {
+    "trial": 16,
+    "group": 4,
+    "kind": 2,
+    "unit": 0.4934434445218202,
+    "power_kw": 60154.36448872616,
+    "accepted": false
+  },
+  {
+    "trial": 17,
+    "group": 5,
+    "kind": 2,
+    "unit": 0.4934434445218202,
+    "power_kw": 60154.36448872616,
+    "accepted": false
+  },
+  {
+    "trial": 18,
+    "group": 0,
+    "kind": 3,
+    "unit": 0.4902781565234486,
+    "power_kw": 60073.60755390666,
+    "accepted": false
+  },
+  {
+    "trial": 20,
+    "group": 2,
+    "kind": 3,
+    "unit": 0.4940922873678638,
+    "power_kw": 60074.72409112663,
+    "accepted": false
+  },
+  {
+    "trial": 24,
+    "group": 0,
+    "kind": 4,
+    "unit": 0.49219550215053204,
+    "power_kw": 60104.94381404329,
+    "accepted": false
+  },
+  {
+    "trial": 25,
+    "group": 1,
+    "kind": 4,
+    "unit": 0.49171537250761854,
+    "power_kw": 60081.75556205356,
+    "accepted": false
+  },
+  {
+    "trial": 26,
+    "group": 2,
+    "kind": 4,
+    "unit": 0.4907919877996887,
+    "power_kw": 60076.71630890022,
+    "accepted": false
+  },
+  {
+    "trial": 27,
+    "group": 3,
+    "kind": 4,
+    "unit": 0.48946585083308103,
+    "power_kw": 60064.19536027629,
+    "accepted": false
+  },
+  {
+    "trial": 28,
+    "group": 4,
+    "kind": 4,
+    "unit": 0.4953764076942929,
+    "power_kw": 60159.49167577511,
+    "accepted": true
+  },
+  {
+    "trial": 29,
+    "group": 5,
+    "kind": 4,
+    "unit": 0.4983825276376836,
+    "power_kw": 60166.17725464441,
+    "accepted": true
+  },
+  {
+    "trial": 30,
+    "group": 0,
+    "kind": 0,
+    "unit": 0.4967583363482131,
+    "power_kw": 60106.13402388849,
+    "accepted": false
+  },
+  {
+    "trial": 31,
+    "group": 1,
+    "kind": 0,
+    "unit": 0.4963785831625782,
+    "power_kw": 60078.48982374435,
+    "accepted": false
+  },
+  {
+    "trial": 32,
+    "group": 2,
+    "kind": 0,
+    "unit": 0.49878811837692316,
+    "power_kw": 60152.44119806191,
+    "accepted": true
+  },
+  {
+    "trial": 33,
+    "group": 3,
+    "kind": 0,
+    "unit": 0.49863540568603965,
+    "power_kw": 60135.161713101035,
+    "accepted": false
+  },
+  {
+    "trial": 34,
+    "group": 4,
+    "kind": 0,
+    "unit": 0.49806245611629407,
+    "power_kw": 60144.848357268136,
+    "accepted": false
+  },
+  {
+    "trial": 35,
+    "group": 5,
+    "kind": 0,
+    "unit": 0.4978691135149805,
+    "power_kw": 60124.432129144174,
+    "accepted": false
+  },
+  {
+    "trial": 36,
+    "group": 0,
+    "kind": 1,
+    "unit": 0.49876298732251145,
+    "power_kw": 60007.10535251063,
+    "accepted": false
+  },
+  {
+    "trial": 37,
+    "group": 1,
+    "kind": 1,
+    "unit": 0.4959362127042553,
+    "power_kw": 60087.00102948569,
+    "accepted": false
+  },
+  {
+    "trial": 38,
+    "group": 2,
+    "kind": 1,
+    "unit": 0.4984249869242186,
+    "power_kw": 60144.9400867856,
+    "accepted": false
+  },
+  {
+    "trial": 39,
+    "group": 3,
+    "kind": 1,
+    "unit": 0.498651139746848,
+    "power_kw": 60114.611853273054,
+    "accepted": false
+  },
+  {
+    "trial": 40,
+    "group": 4,
+    "kind": 1,
+    "unit": 0.49854813732638753,
+    "power_kw": 60148.11981247598,
+    "accepted": false
+  },
+  {
+    "trial": 41,
+    "group": 5,
+    "kind": 1,
+    "unit": 0.49833211249757636,
+    "power_kw": 60133.16183472026,
+    "accepted": false
+  },
+  {
+    "trial": 42,
+    "group": 0,
+    "kind": 2,
+    "unit": 0.4986505527742858,
+    "power_kw": 60135.851174124604,
+    "accepted": false
+  },
+  {
+    "trial": 43,
+    "group": 1,
+    "kind": 2,
+    "unit": 0.49858437670098477,
+    "power_kw": 60127.870526207575,
+    "accepted": false
+  },
+  {
+    "trial": 44,
+    "group": 2,
+    "kind": 2,
+    "unit": 0.49767692505281497,
+    "power_kw": 60018.43441517061,
+    "accepted": false
+  },
+  {
+    "trial": 45,
+    "group": 3,
+    "kind": 2,
+    "unit": 0.49694079940173497,
+    "power_kw": 59929.65973648527,
+    "accepted": false
+  },
+  {
+    "trial": 46,
+    "group": 4,
+    "kind": 2,
+    "unit": 0.500393544293991,
+    "power_kw": 60171.205615193445,
+    "accepted": true
+  },
+  {
+    "trial": 47,
+    "group": 5,
+    "kind": 2,
+    "unit": 0.5027579408675678,
+    "power_kw": 60155.88271831016,
+    "accepted": true
+  },
+  {
+    "stage": "position_exchange",
+    "trial": 0,
+    "unit": 0.5027316809564365,
+    "power_kw": 60152.74067319104,
+    "accepted": false
+  },
+  {
+    "stage": "position_exchange",
+    "trial": 1,
+    "unit": 0.5026778443544334,
+    "power_kw": 60146.299027912464,
+    "accepted": false
+  },
+  {
+    "stage": "position_exchange",
+    "trial": 2,
+    "unit": 0.5026915241855712,
+    "power_kw": 60147.93584406322,
+    "accepted": false
+  },
+  {
+    "stage": "position_exchange",
+    "trial": 3,
+    "unit": 0.5026923660690225,
+    "power_kw": 60148.036576917024,
+    "accepted": false
+  },
+  {
+    "stage": "position_exchange",
+    "trial": 4,
+    "unit": 0.50270141977267,
+    "power_kw": 60149.119868677364,
+    "accepted": false
+  },
+  {
+    "stage": "position_exchange",
+    "trial": 5,
+    "unit": 0.5026979325218973,
+    "power_kw": 60148.702612913825,
+    "accepted": false
+  },
+  {
+    "stage": "position_exchange",
+    "trial": 6,
+    "unit": 0.50267539506253,
+    "power_kw": 60146.00596577559,
+    "accepted": false
+  },
+  {
+    "stage": "position_exchange",
+    "trial": 7,
+    "unit": 0.5026908300214057,
+    "power_kw": 60147.85278608496,
+    "accepted": false
+  },
+  {
+    "stage": "individual",
+    "trial": 0,
+    "mirror": 2403,
+    "unit": 0.5027663709547876,
+    "power_kw": 60155.82197773162,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 1,
+    "mirror": 2402,
+    "unit": 0.5027728338420567,
+    "power_kw": 60155.525830682695,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 2,
+    "mirror": 2400,
+    "unit": 0.5027803167129042,
+    "power_kw": 60155.35169248224,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 3,
+    "mirror": 2400,
+    "unit": 0.5027875768085812,
+    "power_kw": 60155.15086889836,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 4,
+    "mirror": 2398,
+    "unit": 0.5027956758438937,
+    "power_kw": 60155.05038612776,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 5,
+    "mirror": 2398,
+    "unit": 0.502802712302485,
+    "power_kw": 60154.82274326737,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 6,
+    "mirror": 2402,
+    "unit": 0.5028090728830004,
+    "power_kw": 60154.51421052137,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 7,
+    "mirror": 2395,
+    "unit": 0.5028188850100556,
+    "power_kw": 60154.61857567191,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 8,
+    "mirror": 2394,
+    "unit": 0.5028267807798447,
+    "power_kw": 60154.49364020766,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 9,
+    "mirror": 2394,
+    "unit": 0.5028341412819789,
+    "power_kw": 60154.304636811394,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 10,
+    "mirror": 2394,
+    "unit": 0.5028409160623082,
+    "power_kw": 60154.04553315042,
+    "accepted": true
+  },
+  {
+    "stage": "individual",
+    "trial": 11,
+    "mirror": 2402,
+    "unit": 0.5028470067523189,
+    "power_kw": 60153.70456550536,
+    "accepted": true
+  }
+]

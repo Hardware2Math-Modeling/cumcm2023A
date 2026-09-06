@@ -1,0 +1,92 @@
+[
+  {
+    "problem": "q1",
+    "rays": 128,
+    "power_MW": 35.435903795298564,
+    "relative_error_percent": 0.5704055148900711
+  },
+  {
+    "problem": "q1",
+    "rays": 512,
+    "power_MW": 35.25856458052517,
+    "relative_error_percent": 0.06710025572467249
+  },
+  {
+    "problem": "q1",
+    "rays": 1024,
+    "power_MW": 35.239240477102186,
+    "relative_error_percent": 0.012256644886132761
+  },
+  {
+    "problem": "q1",
+    "rays": 2048,
+    "power_MW": 35.238375333319624,
+    "relative_error_percent": 0.00980128600651664
+  },
+  {
+    "problem": "q1",
+    "rays": 4096,
+    "power_MW": 35.23876793005494,
+    "relative_error_percent": 0.010915512219078494
+  },
+  {
+    "problem": "q2",
+    "rays": 128,
+    "power_MW": 60.07587165606845,
+    "relative_error_percent": 0.02942786121080676
+  },
+  {
+    "problem": "q2",
+    "rays": 512,
+    "power_MW": 59.90994950790713,
+    "relative_error_percent": -0.24684108158702367
+  },
+  {
+    "problem": "q2",
+    "rays": 1024,
+    "power_MW": 59.99404045902531,
+    "relative_error_percent": -0.10682530658815415
+  },
+  {
+    "problem": "q2",
+    "rays": 2048,
+    "power_MW": 60.0556784408733,
+    "relative_error_percent": -0.004194884609887151
+  },
+  {
+    "problem": "q2",
+    "rays": 4096,
+    "power_MW": 60.05635340205799,
+    "relative_error_percent": -0.003071039390978303
+  },
+  {
+    "problem": "q3",
+    "rays": 128,
+    "power_MW": 60.167418503726616,
+    "relative_error_percent": 0.16749655930321516
+  },
+  {
+    "problem": "q3",
+    "rays": 512,
+    "power_MW": 59.92392006942355,
+    "relative_error_percent": -0.23788278365025617
+  },
+  {
+    "problem": "q3",
+    "rays": 1024,
+    "power_MW": 60.0074981094822,
+    "relative_error_percent": -0.0987409815220941
+  },
+  {
+    "problem": "q3",
+    "rays": 2048,
+    "power_MW": 60.0656571048941,
+    "relative_error_percent": -0.0019171337039769476
+  },
+  {
+    "problem": "q3",
+    "rays": 4096,
+    "power_MW": 60.06662117744277,
+    "relative_error_percent": -0.0003121332551647704
+  }
+]

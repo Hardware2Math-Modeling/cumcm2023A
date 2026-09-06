@@ -1,0 +1,16 @@
+{
+  "seconds": 2313.0663816928864,
+  "input_unchanged": true,
+  "budget": {
+    "global_candidates": 256,
+    "finalists": 24,
+    "refinement_trials": 36,
+    "q3_trials": 48,
+    "screening_rays": 32,
+    "search_rays": 128,
+    "refinement_rays": 512,
+    "target_kw": 60150.0,
+    "seed": 202309,
+    "workers": 4
+  }
+}
