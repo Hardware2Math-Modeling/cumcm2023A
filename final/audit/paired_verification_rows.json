@@ -1,0 +1,65 @@
+[
+  {
+    "label": "q3_baseline",
+    "rays": 4096,
+    "seed": 916718,
+    "power_MW": 60.078778208364575,
+    "unit": 0.5022206696931595
+  },
+  {
+    "label": "q3_baseline",
+    "rays": 4096,
+    "seed": 917715,
+    "power_MW": 60.08325354586113,
+    "unit": 0.5022580806902145
+  },
+  {
+    "label": "q3_baseline",
+    "rays": 4096,
+    "seed": 918712,
+    "power_MW": 60.03858173204323,
+    "unit": 0.5018846525193847
+  },
+  {
+    "label": "outer_z_6.0",
+    "rays": 4096,
+    "seed": 916718,
+    "power_MW": 60.34972553299355,
+    "unit": 0.5044856183303438
+  },
+  {
+    "label": "outer_z_6.0",
+    "rays": 4096,
+    "seed": 917715,
+    "power_MW": 60.35530295779154,
+    "unit": 0.5045322420817039
+  },
+  {
+    "label": "outer_z_6.0",
+    "rays": 4096,
+    "seed": 918712,
+    "power_MW": 60.3090069394526,
+    "unit": 0.504145236586125
+  },
+  {
+    "label": "without_individual_shrink",
+    "rays": 4096,
+    "seed": 916718,
+    "power_MW": 60.080857098301564,
+    "unit": 0.5021309078240255
+  },
+  {
+    "label": "without_individual_shrink",
+    "rays": 4096,
+    "seed": 917715,
+    "power_MW": 60.08528417285473,
+    "unit": 0.5021679074786867
+  },
+  {
+    "label": "without_individual_shrink",
+    "rays": 4096,
+    "seed": 918712,
+    "power_MW": 60.04062345676788,
+    "unit": 0.5017946517197672
+  }
+]

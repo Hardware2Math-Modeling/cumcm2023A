@@ -1,0 +1,80 @@
+{
+  "q3_baseline": {
+    "power": {
+      "mean_kw": 60066.871162089636,
+      "replicate_kw": [
+        60078.77820836457,
+        60083.25354586113,
+        60038.581732043225
+      ],
+      "standard_error_kw": 14.203591690019769,
+      "lower_95_one_sided_kw": 60025.39687916552,
+      "two_sided_95_halfwidth_kw": 61.113122556552995,
+      "interpretation": "Approximate uncertainty of randomized quadrature only; excludes physical-model error."
+    },
+    "paired_difference_kw": {
+      "mean_kw": 0.0,
+      "replicate_kw": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "standard_error_kw": 0.0,
+      "lower_95_one_sided_kw": 0.0,
+      "two_sided_95_halfwidth_kw": 0.0,
+      "interpretation": "Approximate uncertainty of randomized quadrature only; excludes physical-model error."
+    }
+  },
+  "outer_z_6.0": {
+    "power": {
+      "mean_kw": 60338.011810079224,
+      "replicate_kw": [
+        60349.72553299355,
+        60355.30295779154,
+        60309.0069394526
+      ],
+      "standard_error_kw": 14.591536438348085,
+      "lower_95_one_sided_kw": 60295.40473408402,
+      "two_sided_95_halfwidth_kw": 62.78231408691911,
+      "interpretation": "Approximate uncertainty of randomized quadrature only; excludes physical-model error."
+    },
+    "paired_difference_kw": {
+      "mean_kw": 271.14064798958617,
+      "replicate_kw": [
+        270.9473246289781,
+        272.04941193040577,
+        270.4252074093747
+      ],
+      "standard_error_kw": 0.47872766191647353,
+      "lower_95_one_sided_kw": 269.7427701198728,
+      "two_sided_95_halfwidth_kw": 2.0597988813259667,
+      "interpretation": "Approximate uncertainty of randomized quadrature only; excludes physical-model error."
+    }
+  },
+  "without_individual_shrink": {
+    "power": {
+      "mean_kw": 60068.921575974724,
+      "replicate_kw": [
+        60080.85709830157,
+        60085.28417285473,
+        60040.623456767884
+      ],
+      "standard_error_kw": 14.206658183850656,
+      "lower_95_one_sided_kw": 60027.43833893284,
+      "two_sided_95_halfwidth_kw": 61.12631661460506,
+      "interpretation": "Approximate uncertainty of randomized quadrature only; excludes physical-model error."
+    },
+    "paired_difference_kw": {
+      "mean_kw": 2.0504138850834956,
+      "replicate_kw": [
+        2.0788899369945284,
+        2.0306269935972523,
+        2.0417247246587067
+      ],
+      "standard_error_kw": 0.014593994860991742,
+      "lower_95_one_sided_kw": 2.0077996305296173,
+      "two_sided_95_halfwidth_kw": 0.06279289182581758,
+      "interpretation": "Approximate uncertainty of randomized quadrature only; excludes physical-model error."
+    }
+  }
+}

@@ -1,0 +1,233 @@
+[
+  {
+    "label": "tower_y_-160",
+    "valid": true,
+    "count": 2412,
+    "area": 121253.78936019851,
+    "power_MW": 56.49912136172554,
+    "unit": 0.4659575726238816,
+    "rays": 256,
+    "seed": 915721,
+    "efficiencies": [
+      0.47899939186963286,
+      0.8368414540943399,
+      0.7395659812633318,
+      0.96004769130475,
+      0.8905469846631483,
+      56.49912136172555,
+      0.46595757262388166,
+      0.9535287729612464,
+      0.21396279169791477,
+      0.8440702825972282
+    ],
+    "constraints": {
+      "valid": true,
+      "violations": [],
+      "count": 2412,
+      "total_area_m2": 121253.78936019851,
+      "minimum_spacing_margin_m": 0.05005292188245036,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 0.027423092757413947,
+      "minimum_exclusion_margin_m": 0.19258360667786878,
+      "whole_mirror_footprint": true
+    }
+  },
+  {
+    "label": "tower_y_-120",
+    "valid": true,
+    "count": 2406,
+    "area": 120952.16301850647,
+    "power_MW": 57.771450488580086,
+    "unit": 0.4776388370974455,
+    "rays": 256,
+    "seed": 915721,
+    "efficiencies": [
+      0.49075096361166975,
+      0.8181248853441386,
+      0.7711254977948739,
+      0.9618738983336068,
+      0.8972833616295102,
+      57.77145048858009,
+      0.4776388370974454,
+      0.9565204307736875,
+      0.18539493297881374,
+      0.8504599287959154
+    ],
+    "constraints": {
+      "valid": true,
+      "violations": [],
+      "count": 2406,
+      "total_area_m2": 120952.16301850647,
+      "minimum_spacing_margin_m": 0.050023605171347185,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 0.023940533223691496,
+      "minimum_exclusion_margin_m": 0.1925836066778972,
+      "whole_mirror_footprint": true
+    }
+  },
+  {
+    "label": "tower_y_-80",
+    "valid": true,
+    "count": 2402,
+    "area": 120751.07879071178,
+    "power_MW": 58.555756065987325,
+    "unit": 0.48492946524707536,
+    "rays": 256,
+    "seed": 915721,
+    "efficiencies": [
+      0.4979860581418547,
+      0.7986658491264831,
+      0.797552326878147,
+      0.9631275876992755,
+      0.9026660649348106,
+      58.55575606598734,
+      0.48492946524707536,
+      0.9593593625222987,
+      0.16180703564415178,
+      0.8559515294479776
+    ],
+    "constraints": {
+      "valid": true,
+      "violations": [],
+      "count": 2402,
+      "total_area_m2": 120751.07879071178,
+      "minimum_spacing_margin_m": 0.050023605171347185,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 0.0734661765941782,
+      "minimum_exclusion_margin_m": 0.1925836066778972,
+      "whole_mirror_footprint": true
+    }
+  },
+  {
+    "label": "tower_y_-40",
+    "valid": true,
+    "count": 2400,
+    "area": 120650.53667681443,
+    "power_MW": 58.87816823895837,
+    "unit": 0.48800585443457095,
+    "rays": 256,
+    "seed": 915721,
+    "efficiencies": [
+      0.5008786599826813,
+      0.7766787196813197,
+      0.8208658528854836,
+      0.9639312835790131,
+      0.9068034886513651,
+      58.87816823895836,
+      0.488005854434571,
+      0.9624551615122926,
+      0.14158930862680857,
+      0.860917436146165
+    ],
+    "constraints": {
+      "valid": true,
+      "violations": [],
+      "count": 2400,
+      "total_area_m2": 120650.53667681443,
+      "minimum_spacing_margin_m": 0.050023605171347185,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 0.0894014965451051,
+      "minimum_exclusion_margin_m": 0.1925836066778972,
+      "whole_mirror_footprint": true
+    }
+  },
+  {
+    "label": "tower_y_+0",
+    "valid": true,
+    "count": 2485,
+    "area": 124923.57651745164,
+    "power_MW": 60.37283745215905,
+    "unit": 0.4832781700236148,
+    "rays": 256,
+    "seed": 915721,
+    "efficiencies": [
+      0.4957848830449922,
+      0.7530973106223141,
+      0.8348121975413044,
+      0.9638405958558142,
+      0.9096807942499799,
+      60.372837452159054,
+      0.4832781700236149,
+      0.9652666731212837,
+      0.13045447557997902,
+      0.8650563235718983
+    ],
+    "constraints": {
+      "valid": true,
+      "violations": [],
+      "count": 2485,
+      "total_area_m2": 124923.57651745164,
+      "minimum_spacing_margin_m": 0.050023605171347185,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 0.3457888041561832,
+      "minimum_exclusion_margin_m": 0.1925836066778972,
+      "whole_mirror_footprint": true
+    }
+  },
+  {
+    "label": "tower_y_+40",
+    "valid": true,
+    "count": 2399,
+    "area": 120600.26561986576,
+    "power_MW": 57.66937499876853,
+    "unit": 0.4781861358460308,
+    "rays": 256,
+    "seed": 915721,
+    "efficiencies": [
+      0.49031529632333065,
+      0.7302877781905682,
+      0.848908748018831,
+      0.9639340272971938,
+      0.9098664569436212,
+      57.669374998768504,
+      0.47818613584603076,
+      0.9685790390221424,
+      0.11967029100331149,
+      0.8671437126941621
+    ],
+    "constraints": {
+      "valid": true,
+      "violations": [],
+      "count": 2399,
+      "total_area_m2": 120600.26561986576,
+      "minimum_spacing_margin_m": 0.050023605171347185,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 0.17053371966998743,
+      "minimum_exclusion_margin_m": 0.19258360667786878,
+      "whole_mirror_footprint": true
+    }
+  },
+  {
+    "label": "tower_y_+80",
+    "valid": true,
+    "count": 2406,
+    "area": 120952.16301850647,
+    "power_MW": 56.23929271510732,
+    "unit": 0.46497136811437045,
+    "rays": 256,
+    "seed": 915721,
+    "efficiencies": [
+      0.47654540527302897,
+      0.705832375970714,
+      0.8531200571515677,
+      0.9631135540749672,
+      0.9089183144816335,
+      56.23929271510733,
+      0.4649713681143704,
+      0.9716373516365556,
+      0.118517294484988,
+      0.8684640166801653
+    ],
+    "constraints": {
+      "valid": true,
+      "violations": [],
+      "count": 2406,
+      "total_area_m2": 120952.16301850647,
+      "minimum_spacing_margin_m": 0.050023605171347185,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 0.0734661765941782,
+      "minimum_exclusion_margin_m": 0.19258360667786878,
+      "whole_mirror_footprint": true
+    }
+  }
+]
