@@ -1,0 +1,114 @@
+\subsection{问题二：统一镜型的交错环形布局优化}
+\subsubsection{设计变量、目标函数与几何约束}
+问题二将镜面宽度 $w$、高度 $h$ 和安装高度 $z$ 作为所有镜子共用的参数，以塔址、底座坐标和镜数描述空间设计。记待选布局为 $\mathcal F$，则原问题可写为
+\begin{equation}\label{eq:q2objective}
+\max_{\mathcal F,w,h,z,x_T,y_T}\quad J=\frac{\mean P(\mathcal F,w,h,z,x_T,y_T)}{Nwh},
+\qquad \mean P\ge P_*=60000\ \mathrm{kW}.
+\end{equation}
+这里 $\mean P$ 由问题一的完整追迹过程计算，其对设计变量的依赖包含余弦、阴影、遮挡、截断与大气衰减，不能仅以面积或孤立镜效率代替。
+
+约束分为设备范围、场地边界、禁区与维护间距四类：
+\begin{align}
+&2\le h\le w\le8,\qquad 2\le z\le6,\qquad z-h/2>0,\\
+&x_i^2+y_i^2\le350^2,\qquad i=1,\ldots,N,\\
+&(x_i-x_T)^2+(y_i-y_T)^2\ge100^2,\qquad i=1,\ldots,N,\\
+&\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}>w+5,\qquad i\ne j.
+\end{align}
+实际生成器取 $p=w+5.02$，以 $0.02\,\mathrm m$ 超额距离避免边界舍入导致的约束冲突。离地条件采用 $z\ge h/2+0.05$，并与安装高度下界 $2\,\mathrm m$ 共同满足。塔址搜索沿南北方向进行，即 $x_T=0$，这是求解范围的限制，不是由原问题推导出的必要条件。
+
+\textbf{单位面积最大化与总功率最大化是不同目标。}对现有方案增加面积 $\Delta A$ 和功率 $\Delta P$ 后，目标改善的条件为
+\begin{equation}\label{eq:marginal}
+\frac{\mean P+\Delta P}{A_\Sigma+\Delta A}>\frac{\mean P}{A_\Sigma}
+\quad\Longleftrightarrow\quad\frac{\Delta P}{\Delta A}>J\qquad(\Delta A>0).
+\end{equation}
+因此，即使新增镜子能增加总功率，其边际收益低于原场面积效率时，也会降低目标。另一方面，当功率尚未达标时，又不能只保留高效率镜子而牺牲容量。本文在容量门槛附近压缩低收益面积，正是对这两方面的协调。
+
+本次搜索进一步限制统一镜面为正方形 $h=w$。正方形便于把镜型、节距和安装下界联动，降低初轮组合规模；原问题允许的非正方形统一镜型仍是可扩展方向。因此最终方案应理解为所搜索子空间内的可行改进解，而非完整设计空间的全局最优。
+
+\pagepart
+\subsubsection{分区交错圆环与精确环距推导}
+以吸收塔为圆心生成底座圆环，第一环半径取 $r_0=100.02\,\mathrm m$。每个区段包含 $g$ 个环，同一区段采用相同名义镜数 $n$，相邻环错开半个角间距。在区段起始半径 $r$ 上，同环弦距约束给出
+\begin{equation}
+2r\sin\frac{\pi}{n}\ge p,
+\qquad n=\left\lfloor\frac{\pi}{\arcsin[p/(2r)]}\right\rfloor.
+\end{equation}
+第 $k$ 个环上第 $j$ 个名义镜位可写为
+\begin{equation}
+\theta_{kj}=\frac{2\pi}{n}\left[j+\frac12(k\bmod2)+\psi\right],\quad
+(x_{kj},y_{kj})=(r_k\sin\theta_{kj},y_T+r_k\cos\theta_{kj}).
+\end{equation}
+仅保留 $x_{kj}^2+y_{kj}^2\le350^2$ 的点，因此偏移塔址下部分圆环会被场界截成弧段。名义镜数不等于最终保留镜数，后续删镜还可能使环内出现空位。
+
+相邻两环最近镜子的角差为 $\delta_r=\pi/n$。设径向增量为 $\Delta r$，则最近中心距满足
+\begin{equation}
+d^2=r^2+(r+\Delta r)^2-2r(r+\Delta r)\cos\delta_r.
+\end{equation}
+由 $d\ge p$ 解出相邻环所需间距，再保证相隔一环、具有相同角相位的镜子也满足距离约束：
+\begin{equation}\label{eq:radial}
+\Delta r=\max\left\{\frac p2+\varepsilon,
+-r+r\cos\delta_r+\sqrt{\max(0,p^2-r^2\sin^2\delta_r)}\right\}+\varepsilon,
+\end{equation}
+其中 $\varepsilon=10^{-5}\,\mathrm m$。区段交界重新计算镜数时，径向步长取 $p+\varepsilon$，避免不同角间距造成镜面对冲突。
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,scale=.83]
+\foreach \x in {0,2,4,6}{\draw[fill=navy!80,draw=navy] (\x,0) rectangle +(1,.48);}
+\foreach \x in {1,3,5}{\draw[fill=orange!85,draw=orange] (\x,1.65) rectangle +(1,.48);}
+\draw[<->,thick] (.5,-.45)--(2.5,-.45) node[midway,below]{同环切向间隔};
+\draw[<->,thick] (7.2,.24)--(7.2,1.89) node[midway,right]{$\Delta r$};
+\draw[<->,thick,wine] (.55,.6)--(1.45,1.5) node[midway,left]{$d\ge p$};
+\end{tikzpicture}
+\caption{相邻环半角错位关系的局部展开示意；实际生成使用圆环弦距}
+\end{figure}
+同一区段半径增大时，切向距离也增大，式\eqref{eq:radial}允许径向间距适当缩小，因而比始终使用固定比例径向步长更充分地利用间隙。紧凑几何并不保证光学最佳，遮挡收益仍由全场追迹决定。
+
+\pagepart
+\subsubsection{组合筛选、局部细化与容量约束删镜}
+初轮组合搜索取镜宽 $w\in\{6,6.5,7,7.5,8\}$、塔址 $y_T\in\{-60,0,60\}$ 和区段圈数 $g\in\{3,5,8\}$，共形成 $45$ 组候选。令 $h=w$、$z=w/2+0.05$，各候选先按 $64$ 条光线计算全场年均功率和面积目标；只有满足粗筛容量门槛的候选才进入优选。
+
+\begin{table}[H]\centering\small
+\caption{第二问算法的主要搜索层级}
+\begin{tabular}{p{26mm}p{70mm}p{45mm}}\toprule
+阶段 & 变量或动作 & 光线数与处理\\\midrule
+组合初筛 & 五种镜宽、三个塔址、三种区段圈数 & $45$ 组，$K=64$\\
+局部细化 & 镜宽 $\pm0.25$ m、塔址 $\pm30$ m、相位及安装高度 & 优选三组出发，$K=128$\\
+低收益删镜 & 按逐镜面积收益升序批量删除 & 至多五个候选、每个至多四轮，$K=512$\\
+最终复算 & 冻结完整坐标、尺寸、塔址 & $K=4096,16384$\\
+\bottomrule\end{tabular}\end{table}
+定义逐镜年均功率 $p_i=A_iq_i$。将 $q_i$ 从小到大排序，记当前功率相对工作目标 $P_{\rm work}=60200\,\mathrm{kW}$ 的余量为
+\begin{equation}
+B=\max(0,\mean P-P_{\rm work}).
+\end{equation}
+按累计原功率不超过余量的原则提出待删集合 $\mathcal D$，对保留镜子重新追迹。如果复算功率不低于 $60100\,\mathrm{kW}$，则接受该候选；否则停止本轮删镜。保留一定工作余量可以降低粗精度误差使最终方案跌破 $60\,\mathrm{MW}$ 的可能，但不能代替最终复核。
+
+在固定几何姿态和固定采样点的连续物理意义下，删除镜面不会新增遮挡，保留镜的接收能量不应降低。因此原功率累计可作为有解释性的提案依据。但程序的采样平移包含镜子行索引，删镜重编号会改变保留镜的离散样本；实际接受仍以重新计算的全场功率为准，不能直接把上述单调性质当作离散估计的严格保证。
+
+现有搜索源码在初筛阶段使用硬容量门槛，且局部候选晋级时可能混合不同光线数排序。这种安排节省成本，但可能遗漏低精度下被误判的潜力方案。本文据实描述这一限制，最后只对实际交付布局作高精度复算和独立数值检验，不把最终数值稳定性当作搜索已经穷尽的证据。
+
+\pagepart
+\subsubsection{问题二的设计参数与空间布局}
+实际得到的统一镜型设计采用南偏 $60\,\mathrm m$ 的塔址、每区段五个圆环及零角相位。最终保留 $3219$ 面镜，占用 $34$ 个圆环。布局、面积和功率均由完整精度坐标重新计算。
+\begin{table}[H]\centering\small
+\caption{问题二统一镜型设计参数}
+\begin{tabular}{lr}\toprule
+参数 & 结果\\\midrule
+吸收塔平面坐标 & $(0,-60)\,\mathrm m$\\
+镜面宽度 $\times$ 高度、安装高度 & $5.75\times5.75\,\mathrm m^2$，$2.925\,\mathrm m$\\
+镜数、总镜面面积 & $3219$，$106428.1875\,\mathrm m^2$\\
+年均热功率、单位面积年均热功率 & $60.202723\,\mathrm{MW}$，$0.565665\,\unitp$\\
+\bottomrule\end{tabular}\end{table}
+\paperfig{02_q2_layout}{.80}{问题二统一镜型交错环形布局，颜色表示逐镜单位面积年均热功率。}{q2layout}
+塔址偏南使其北侧存在较多高余弦收益镜位，但本结果同时依赖 $5.75\,\mathrm m$ 镜型、交错环距和场界裁剪，不能把收益单独归于塔址。总功率略高于额定值，说明低收益删镜在压缩面积时保留了数值容量余量。
+
+\pagepart
+\subsubsection{问题二的月均结果与设计解释}
+最终设计在 $16384$ 条光线下的月度结果见表\ref{tab:q2_monthly}。年平均光学效率为 $0.58063$，余弦效率为 $0.78685$，阴影遮挡效率为 $0.85828$，条件截断效率为 $0.98363$。
+\input{tables/q2_monthly.tex}
+\textbf{容量与效率需要联合解释。}第二问镜数明显多于给定镜场，因此其总功率高得多；单位面积年均功率也由第一问的 $0.56078$ 提高至 $0.56567\,\unitp$。这不是仅增加面积产生的数值变化，而是尺寸、塔址和布局共同改变了有效接收比例。
+
+相对于第一问，第二问年均余弦效率提高，而阴影遮挡效率有所下降，说明紧凑布局确实带来更多相互作用。镜面较小以及合适的反射几何又使条件截断效率保持较高。最终目标由这些因素共同决定，不宜只挑选某一个效率分项比较优劣。
+
+第二问每面镜面积为 $33.0625\,\mathrm m^2$，相邻底座最小中心距约为 $10.770008\,\mathrm m$，比镜宽加 $5\,\mathrm m$ 多约 $0.020008\,\mathrm m$。可见原布局已经接近设定的几何节距；图中让矩形更显眼属于绘图符号调整，不意味着实际进一步压缩了底座间距。
+
+各月平均功率并非都超过 $60\,\mathrm{MW}$，因为题目约束的是年均额定功率。若要求冬季月均或每个时刻都达到 $60\,\mathrm{MW}$，则需改变约束条件，现有设计与目标函数均应重新优化。
+\pagepart

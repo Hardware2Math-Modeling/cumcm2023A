@@ -1,0 +1,17 @@
+{
+  "settings": {
+    "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+    "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf",
+    "rays": 16384,
+    "seed": 20260905,
+    "solar_half_angle_rad": 0.00465,
+    "mast_radius_m": 3.5
+  },
+  "power_MW": 60.21310431589834,
+  "unit_kW_m2": 0.5826106725743665,
+  "count": 3235,
+  "area_m2": 103350.5,
+  "difference_from_expected_MW": 0.0,
+  "time_csv_sha256": "7248fbe445b5ca4eea50f7f87aaafdd2215dbc131c5541ad87a8b5bf0c821f55",
+  "per_mirror_csv_sha256": "18796eb564a18759888f0780e384d7dc0fe0206b6c7623726a86218f33b1f26e"
+}

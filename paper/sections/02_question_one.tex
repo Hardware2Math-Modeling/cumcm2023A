@@ -1,0 +1,228 @@
+\section{模型的建立与求解}
+\subsection{问题一：给定镜场的光学效率与热功率}
+\subsubsection{输入数据与计算时刻的组织}
+问题一没有待优化的镜位变量，但计算结果将成为后续设计的评价基础。将附件中每行平面坐标扩展为三维镜心 $\vct c_i=(x_i,y_i,4)$，并为每面镜赋予 $w_i=h_i=6$。吸收塔位于 $(0,0)$，集热器中心为 $\vct T=(0,0,80)$。数据中共有 $1745$ 面镜，因此镜面总面积为
+\begin{equation}
+A_\Sigma=\sum_{i=1}^{1745}w_ih_i=1745\times36=62820\ \mathrm m^2.
+\end{equation}
+读取时检查记录数量、坐标有限性和尺寸范围，保留原始行序，以便逐镜计算结果与镜位一一对应。随机平移的生成使用镜子索引和时刻索引，因而行序也属于计算输入的一部分。本文使用文件哈希记录原始数据和追迹源码，保证最终图、表和逐镜输出来自同一版本。
+
+\begin{table}[H]\centering\small
+\caption{问题一的固定参数}
+\begin{tabular}{llr}\toprule
+类别 & 参数 & 取值\\\midrule
+场地 & 场地半径、纬度 & $350\,\mathrm m$，$39.4^\circ$\\
+塔与集热器 & 塔址、接收中心高度 & $(0,0)$，$80\,\mathrm m$\\
+接收几何 & 圆柱半径、高度 & $3.5\,\mathrm m$，$8\,\mathrm m$\\
+定日镜 & 数量、单镜面积 & $1745$，$36\,\mathrm m^2$\\
+定日镜 & 安装高度、反射率 & $4\,\mathrm m$，$0.92$\\
+采样 & 太阳半角、最终光线数 & $4.65\,\mathrm{mrad}$，$16384$\\
+\bottomrule\end{tabular}\end{table}
+
+以 $3$ 月 $21$ 日为第零日，十二个月对应的相对日数为
+\begin{equation}
+\mathcal D=(-59,-28,0,31,61,92,122,153,184,214,245,275).
+\end{equation}
+将它与五个当地太阳时做笛卡尔积，得到 $\mathcal T$。这种组织方式使各月样本数相同，因此先求月均再求年均，与直接对 $60$ 个时刻平均等价。年均指标在本文中是题目规定时刻上的代表性均值，不是对全年 $8760$ 小时连续运行的积分。
+
+从计算结构看，几何输入按镜子索引保存，太阳位置按时刻索引保存，输出为“时刻 $\times$ 镜子”的效率和功率数组。三个维度清楚区分后，既能按月汇总，也能按镜子汇总产生空间热功率图，从而检查局部异常是否影响全场结果。
+
+\pagepart
+\subsubsection{太阳位置与法向直接辐照度}
+设太阳赤纬为 $\delta$，当地太阳时为 $ST$，时角为 $\omega$。按题目附录，有
+\begin{equation}
+\sin\delta=\sin\left(\frac{2\pi D}{365}\right)\sin23.45^\circ,
+\qquad \omega=\frac{\pi}{12}(ST-12).
+\end{equation}
+本文直接构造东、北、天顶坐标系中的太阳方向单位向量，避免仅由方位角余弦反推角度时出现象限歧义：
+\begin{equation}\label{eq:sun}
+\vct s=\begin{pmatrix}
+-\cos\delta\sin\omega\\
+\cos\varphi\sin\delta-\sin\varphi\cos\delta\cos\omega\\
+\sin\varphi\sin\delta+\cos\varphi\cos\delta\cos\omega
+\end{pmatrix},\qquad \varphi=39.4^\circ.
+\end{equation}
+向量从地面指向太阳，因此上午太阳在东侧时 $s_x>0$，下午则 $s_x<0$；太阳高度满足 $\sin\alpha_s=s_z$。正午 $\omega=0$，太阳方向位于南北竖直平面，可以作为坐标符号的一项直接检查。
+
+海拔 $H=3\,\mathrm{km}$ 时，题目给定的法向直接辐照度为
+\begin{align}
+\DNI_t&=G_0\left[a+b\exp\left(-\frac{c}{s_z}\right)\right],\quad G_0=1.366\,\unitp,\\
+a&=0.4237-0.00821(6-H)^2=0.34981,\\
+b&=0.5055+0.00595(6.5-H)^2=0.5783875,\\
+c&=0.2711+0.01858(2.5-H)^2=0.275745.
+\end{align}
+式中已经使用海拔的千米单位，不能把 $3000$ 直接代入 $H$。所有规定时刻的太阳均在地平线以上，因此可以直接使用该表达式；推广到任意时刻时，应在 $s_z\le0$ 时将直接辐照度置零。
+
+\begin{table}[H]\centering\small
+\caption{太阳方向计算中的可检验关系}
+\begin{tabular}{p{48mm}p{95mm}}\toprule
+检验对象 & 关系及含义\\\midrule
+单位向量 & $s_x^2+s_y^2+s_z^2=1$，保证后续点积为方向余弦\\
+正午方向 & $s_x=0$，太阳中心位于当地子午平面\\
+对称时刻 & $9{:}00$ 与 $15{:}00$ 的 $s_x$ 反号，$s_y,s_z$ 相同\\
+高度与辐照度 & 相同日期中太阳高度较大时，模型计算的 DNI 较高\\
+\bottomrule\end{tabular}\end{table}
+太阳方向决定镜面姿态，DNI 决定单位入射面积可获得的辐射能量。二者需要在同一时刻计算，不能以年均太阳方向代替逐时刻方向，也不能简单把年均 DNI 与年均效率相乘来近似年均热功率。
+
+\pagepart
+\subsubsection{镜面姿态与平面反射几何}
+设镜心至集热器中心的距离和单位方向分别为
+\begin{equation}
+d_i=\|\vct T-\vct c_i\|,\qquad
+\vct r_i=\frac{\vct T-\vct c_i}{d_i}.
+\end{equation}
+由于入射传播方向为 $-\vct s$，使中心入射光线反射至集热器中心的镜面法向为
+\begin{equation}\label{eq:normal}
+\vct n_i=\frac{\vct s+\vct r_i}{\|\vct s+\vct r_i\|}.
+\end{equation}
+构造水平镜边方向 $\vct u_i$ 和镜面高度方向 $\vct v_i$：
+\begin{equation}
+\vct u_i=\frac{\vct e_z\times\vct n_i}{\|\vct e_z\times\vct n_i\|},
+\qquad \vct v_i=\vct n_i\times\vct u_i,\quad \vct e_z=(0,0,1).
+\end{equation}
+于是 $\vct u_i$ 始终平行地面，满足题目对上下镜边的要求。任意镜面点可以写为
+\begin{equation}
+\vct p=\vct c_i+\xi w_i\vct u_i+\zeta h_i\vct v_i,
+\qquad -\tfrac12\le\xi,\zeta\le\tfrac12.
+\end{equation}
+若某一太阳采样方向为 $\vct s'$，该点的反射传播方向为
+\begin{equation}\label{eq:reflect}
+\vct d_{\rm out}=2(\vct n_i\cdot\vct s')\vct n_i-\vct s'.
+\end{equation}
+令 $\vct s'=\vct s$ 时，应得到 $\vct d_{\rm out}=\vct r_i$。这条恒等关系可验证法向的正负号和反射公式是否一致。
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,scale=.9]
+\draw[very thick,navy] (-2,0)--(2,0) node[right,black]{镜面剖面};
+\fill (0,0) circle(2pt) node[below right]{$\vct c_i$};
+\draw[->,thick,orange] (-3,2.2)--(-.15,.11) node[midway,above right]{$-\vct s'$};
+\draw[->,thick,wine] (0,0)--(3,2.2) node[right]{$\vct d_{\rm out}$};
+\draw[->,thick,navy] (0,0)--(0,2.8) node[above]{$\vct n_i$};
+\draw[dashed,gray] (-3.3,-1.5)--(3.6,-1.5) node[right,black]{地面};
+\end{tikzpicture}
+\caption{镜面法向与反射方向关系示意，图中几何不按比例绘制}
+\end{figure}
+单镜余弦效率取 $\eta_{{\rm cos},it}=\vct n_i\cdot\vct s$。大气透射率由中心距离给出：
+\begin{equation}
+\eta_{{\rm at},i}=0.99321-0.0001176d_i+1.97\times10^{-8}d_i^2.
+\end{equation}
+这一模型不把平面镜视为聚焦曲面，镜面上偏离中心的点即使反射方向相同，出射光路仍具有横向偏移，因而会产生真实的集热器截断。
+
+\pagepart
+\subsubsection{有限太阳光锥与随机平移 Halton 采样}
+仅追踪太阳中心光线会忽略太阳角直径带来的光斑扩展。为同时积分镜面位置和太阳方向，本文使用四维 Halton 点，前两维确定矩形镜面位置，后两维确定太阳圆盘内的位置\cite{halton}。若整数 $k$ 的基数 $b$ 展开为 $k=\sum_{j\ge0}a_jb^j$，其逆根函数定义为
+\begin{equation}
+\phi_b(k)=\sum_{j\ge0}a_jb^{-j-1}.
+\end{equation}
+取互素基数 $(2,3,5,7)$，并针对镜子 $i$、时刻 $t$ 生成四维随机平移 $\vct\Delta_{it}$。第 $k$ 条光线对应
+\begin{equation}
+q_{itk,j}=\operatorname{frac}\bigl(\phi_{b_j}(k)+\Delta_{it,j}\bigr),
+\quad k=1,\ldots,K.
+\end{equation}
+前两维经减去 $1/2$ 得到 $(\xi,\zeta)$。对后两维，设 $\vct e_1,\vct e_2$ 为垂直于 $\vct s$ 的正交方向，令
+\begin{align}
+\rho&=\tan\alpha_\odot\sqrt{q_{itk,3}},\qquad
+\theta=2\pi q_{itk,4},\\
+\vct s'&=\frac{\vct s+\rho\cos\theta\,\vct e_1+\rho\sin\theta\,\vct e_2}
+{\|\vct s+\rho\cos\theta\,\vct e_1+\rho\sin\theta\,\vct e_2\|}.
+\end{align}
+平方根变换保证在切平面圆盘上按面积均匀采样。由于半角很小，切平面圆盘与球面太阳圆盘之间的差别属于高阶小量；本文保持与原算法一致的圆盘生成方式。
+
+\begin{table}[H]\centering\small
+\caption{一条光线的采样与几何状态}
+\begin{tabular}{p{36mm}p{107mm}}\toprule
+步骤 & 计算内容\\\midrule
+生成位置 & 用前两维得到镜面内的 $\vct p$，保留真实矩形边界\\
+生成光锥方向 & 用后两维得到 $\vct s'$，不以单一平行光线替代太阳盘\\
+入射判定 & 从 $\vct p$ 朝 $\vct s'$ 查找塔体、接收器和其他镜面遮挡\\
+反射判定 & 用式\eqref{eq:reflect}计算出射方向，检验到接收器前的遮挡\\
+能量记录 & 同时记录存活与侧面命中，计算相关光学损失\\
+\bottomrule\end{tabular}\end{table}
+镜面与时间采用不同平移，能改变全场积分误差的相关结构；固定种子则保证同一输入可重现。最终采用 $K=16384$，粗筛使用较少光线以控制搜索成本。光线数越多通常越稳定，但求交指示函数在物体边界处不连续，因此误差不必逐级单调下降，仍需单独开展加密与新随机平移检验。
+
+\pagepart
+\subsubsection{阴影、遮挡与有限圆柱首次命中}
+对从 $\vct p$ 沿单位方向 $\vct d$ 发出的光线，其他镜面 $j$ 所在平面的交点参数为
+\begin{equation}
+\tau=\frac{(\vct c_j-\vct p)\cdot\vct n_j}{\vct d\cdot\vct n_j}.
+\end{equation}
+只有分母非零、$\tau>0$ 且交点落在有限矩形内时才构成相交：
+\begin{equation}
+\left|(\vct p+\tau\vct d-\vct c_j)\cdot\vct u_j\right|\le\frac{w_j}{2},\quad
+\left|(\vct p+\tau\vct d-\vct c_j)\cdot\vct v_j\right|\le\frac{h_j}{2}.
+\end{equation}
+入射方向采用 $\vct d=\vct s'$，出现相交即为阴影；反射方向采用 $\vct d=\vct d_{\rm out}$，仅在光线到达接收表面之前的相交构成有效遮挡。程序使用小的正距离阈值排除镜面自身的数值交点。
+
+对轴线位于 $(x_T,y_T)$ 的圆柱，侧面相交满足
+\begin{equation}
+(p_x+\tau d_x-x_T)^2+(p_y+\tau d_y-y_T)^2=R_c^2.
+\end{equation}
+解一元二次方程，保留 $\tau>0$ 且 $76\le p_z+\tau d_z\le84$ 的根。另计算上下端面 $z=76,84$ 的交点，并检查是否位于圆盘内。在全部合法交点中选取最小正参数：首次命中侧面才计为接收，若先命中端面，则不能继续穿过端面寻找更后的侧面交点。塔身采用同样的圆柱求交，但其作用仅为遮挡。
+
+为减少矩形精确求交次数，程序先对每个可能的镜面对做包围球与光锥筛选。镜面外接球半径为 $a_i=\sqrt{w_i^2+h_i^2}/2$，以镜心差向量在光路方向上的投影和垂距判断是否可能相交。筛选时加入有限光锥带来的横向展宽。通过筛选的对象再进行矩形求交，因而不是仅选固定数量最近邻。
+
+\textbf{判定次序决定损失的物理含义。}入射被挡的光线不再进入有效反射统计；未被入射阻断但在反射途中遇到镜面或塔身的光线计为遮挡损失；两条路径均畅通却未首先命中接收器侧面的光线计为截断损失。同一条光线只按这一顺序记录一次，避免阴影与遮挡重叠时重复扣除能量。
+
+本模型中的表面命中是几何层面的热输入判定，并未计算接收器上的局部热流密度分布。即使总功率达到要求，也不能据此推断局部热负荷一定均匀；这属于后续可扩展的设计约束。
+
+\pagepart
+\subsubsection{效率、全场功率与时间平均}
+记第 $i$ 面镜在时刻 $t$ 的第 $k$ 条光线入射可见、反射可见及有效接收命中指示量分别为 $S_{itk},B_{itk},H_{itk}\in\{0,1\}$。令
+\begin{equation}
+N^{\rm surv}_{it}=\sum_{k=1}^K S_{itk}B_{itk},\qquad
+N^{\rm hit}_{it}=\sum_{k=1}^K S_{itk}B_{itk}H_{itk}.
+\end{equation}
+按原算法采用太阳中心余弦因子，阴影遮挡效率和条件截断效率为
+\begin{equation}
+\eta_{{\rm sb},it}=\frac{N^{\rm surv}_{it}}{K},\qquad
+\eta_{{\rm tr},it}=\begin{cases}N^{\rm hit}_{it}/N^{\rm surv}_{it},&N^{\rm surv}_{it}>0,\\0,&N^{\rm surv}_{it}=0.\end{cases}
+\end{equation}
+因此它们的乘积严格等于共同存活并命中的比例：
+\begin{equation}
+\eta_{it}=\eta_{{\rm cos},it}\eta_{{\rm at},i}\eta_{\rm ref}
+\frac{N^{\rm hit}_{it}}{K}.
+\end{equation}
+这与题目给出的五项效率乘积一致，且明确了截断效率的分母是扣除阴影遮挡后的能量。在中心余弦近似下，每条采样光线具有相同权重；若考虑太阳盘内不同方向的余弦变化，则应改为加权统计，而不应只修改总效率的一项。
+
+全场瞬时热功率和年均目标分别为
+\begin{align}
+P_t&=\DNI_t\sum_{i=1}^{N}A_i\eta_{it},\\
+\mean P&=\frac1{60}\sum_{t\in\mathcal T}P_t,\qquad
+J=\frac{\mean P}{A_\Sigma}.
+\end{align}
+用于选镜和空间着色的逐镜年均单位面积功率为
+\begin{equation}
+q_i=\frac1{60}\sum_{t\in\mathcal T}\DNI_t\eta_{it},\qquad
+\mean P=\sum_i A_iq_i.
+\end{equation}
+效率表则采用各时刻的面积加权平均。例如
+\begin{equation}
+\eta_{{\rm field},t}=\frac{\sum_iA_i\eta_{it}}{A_\Sigma},\qquad
+\mean\eta=\frac1{60}\sum_t\eta_{{\rm field},t}.
+\end{equation}
+第一问各镜面积相同，面积平均与按镜数平均一致；第三问面积不同，必须按面积汇总。年均 DNI 与效率存在时间相关性，故一般有 $\mean{\DNI\eta}\ne\mean\DNI\,\mean\eta$。同理，各分项效率的场均值相乘，也不能替代逐镜逐时刻总效率的平均。
+
+\pagepart
+\subsubsection{问题一的月均与年均计算结果}
+将上述模型应用于 $1745$ 面给定定日镜，采用随机种子 $20260905$，每镜每时刻追踪 $16384$ 条光线，得到表\ref{tab:q1_monthly}。每月的平均光学效率、余弦效率、阴影遮挡效率、截断效率和单位面积热功率均按题目要求汇总，同时列出全场月均功率，便于检查量纲与季节变化。
+\input{tables/q1_monthly.tex}
+全年计算结果为
+\begin{equation}
+\boxed{\mean\eta=0.57619,\quad\mean P=35.2280\ \mathrm{MW},\quad
+J=0.56078\ \unitp.}
+\end{equation}
+年均余弦效率为 $0.75647$，阴影遮挡效率为 $0.88807$，条件截断效率为 $0.97813$。这些数值表明，当前几何中余弦损失不可忽略，镜间相互作用也显著影响总接收能量，而有限接收器导致的条件截断损失相对较小。
+
+月度功率在夏季较高、冬季较低，是太阳高度、DNI 和镜面姿态共同变化的结果。冬季太阳较低，入射阴影更长；夏季太阳较高，阴影条件通常改善，但不能由此推断所有镜子的截断效率同时提升。不同损失对太阳位置的响应方向可能不同，应以联合功率结果评价。
+
+第一问没有 $60\,\mathrm{MW}$ 的容量约束，故其功率低于第二、三问额定值并不构成不可行。它的用途是验证输入、反射几何与统计口径，并为后续优化提供统一可调用的光学评价器，而不是直接作为待达标的设计方案。
+
+\pagepart
+\subsubsection{问题一的空间分布与代表时刻差异}
+图\ref{fig:q1layout}用逐镜单位面积年均热功率着色，镜面按春分日正午的实际姿态投影绘制为小矩形。颜色越接近暖色端，逐镜面积收益越高；图中每个符号对应一条真实镜位记录，不以规则网格插值代替离散镜场。
+\paperfig{01_q1_layout}{.88}{问题一给定镜场的逐镜单位面积年均热功率。矩形投影符号放大 $1.2$ 倍以便辨认，镜心坐标不变。}{q1layout}
+高收益区域不是简单的同心等值带，因为镜子相对太阳和接收器的方位、周围邻居以及反射距离共同决定功率。靠近塔并不必然具有最高单位面积收益，远处也不必然最差；场内局部排列会改变具体镜子的遮挡环境。
+
+同一日期的上午、下午太阳高度对称，但离散镜位和邻居关系未必逐镜对称，所以应实际追踪两个时刻，不用一侧结果复制另一侧。后续设计继续保留五个时刻，使布局对全天代表性光路都能接受检验。
+
+\pagepart

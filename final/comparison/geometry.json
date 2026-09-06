@@ -1,0 +1,372 @@
+{
+  "info_q1": {
+    "centers": {
+      "valid": true,
+      "violations": [],
+      "count": 1745,
+      "total_area_m2": 62820.0,
+      "minimum_spacing_margin_m": 0.680484279343899,
+      "minimum_ground_clearance_m": 1.0,
+      "minimum_site_margin_m": 12.867337396685969,
+      "minimum_exclusion_margin_m": 7.882000000000005,
+      "whole_mirror_footprint": false
+    },
+    "whole_mirror": {
+      "valid": true,
+      "violations": [],
+      "count": 1745,
+      "total_area_m2": 62820.0,
+      "minimum_spacing_margin_m": 0.680484279343899,
+      "minimum_ground_clearance_m": 1.0,
+      "minimum_site_margin_m": 8.624696709566685,
+      "minimum_exclusion_margin_m": 3.6393593128807202,
+      "whole_mirror_footprint": true
+    },
+    "tower": [
+      0.0,
+      0.0
+    ],
+    "outer_violations": 0,
+    "inner_violations": 0,
+    "strict_violations": 0,
+    "radial_rings": 499,
+    "dimension_types": [
+      [
+        6.0,
+        6.0
+      ]
+    ],
+    "dimension_counts": [
+      1745
+    ],
+    "installation_levels": [
+      [
+        4.0
+      ],
+      [
+        1745
+      ]
+    ],
+    "radius_max": 337.13266260331403
+  },
+  "info_q2": {
+    "centers": {
+      "valid": true,
+      "violations": [],
+      "count": 3219,
+      "total_area_m2": 106428.1875,
+      "minimum_spacing_margin_m": 0.0200077161233434,
+      "minimum_ground_clearance_m": 0.04999999999999982,
+      "minimum_site_margin_m": 0.045539691559213225,
+      "minimum_exclusion_margin_m": 0.019999999531876256,
+      "whole_mirror_footprint": false
+    },
+    "whole_mirror": {
+      "valid": false,
+      "violations": [
+        "site boundary",
+        "tower exclusion"
+      ],
+      "count": 3219,
+      "total_area_m2": 106428.1875,
+      "minimum_spacing_margin_m": 0.0200077161233434,
+      "minimum_ground_clearance_m": 0.04999999999999982,
+      "minimum_site_margin_m": -4.020324300263435,
+      "minimum_exclusion_margin_m": -4.045863992290772,
+      "whole_mirror_footprint": true
+    },
+    "tower": [
+      0.0,
+      -60.0
+    ],
+    "outer_violations": 78,
+    "inner_violations": 58,
+    "strict_violations": 136,
+    "radial_rings": 34,
+    "dimension_types": [
+      [
+        5.75,
+        5.75
+      ]
+    ],
+    "dimension_counts": [
+      3219
+    ],
+    "installation_levels": [
+      [
+        2.925
+      ],
+      [
+        3219
+      ]
+    ],
+    "radius_max": 407.51659684523145
+  },
+  "info_q3": {
+    "centers": {
+      "valid": true,
+      "violations": [],
+      "count": 3235,
+      "total_area_m2": 103350.5,
+      "minimum_spacing_margin_m": 0.0200077161233434,
+      "minimum_ground_clearance_m": 0.04999999999999982,
+      "minimum_site_margin_m": 0.045539691559213225,
+      "minimum_exclusion_margin_m": 0.019999999531876256,
+      "whole_mirror_footprint": false
+    },
+    "whole_mirror": {
+      "valid": false,
+      "violations": [
+        "site boundary",
+        "tower exclusion"
+      ],
+      "count": 3235,
+      "total_area_m2": 103350.5,
+      "minimum_spacing_margin_m": 0.0200077161233434,
+      "minimum_ground_clearance_m": 0.04999999999999982,
+      "minimum_site_margin_m": -4.020324300263435,
+      "minimum_exclusion_margin_m": -4.045863992290772,
+      "whole_mirror_footprint": true
+    },
+    "tower": [
+      0.0,
+      -60.0
+    ],
+    "outer_violations": 78,
+    "inner_violations": 58,
+    "strict_violations": 136,
+    "radial_rings": 34,
+    "dimension_types": [
+      [
+        5.75,
+        2.0
+      ],
+      [
+        5.75,
+        3.0
+      ],
+      [
+        5.75,
+        4.0
+      ],
+      [
+        5.75,
+        4.5
+      ],
+      [
+        5.75,
+        5.0
+      ],
+      [
+        5.75,
+        5.5
+      ],
+      [
+        5.75,
+        5.75
+      ]
+    ],
+    "dimension_counts": [
+      51,
+      41,
+      89,
+      53,
+      82,
+      159,
+      2760
+    ],
+    "installation_levels": [
+      [
+        2.925,
+        2.92628072,
+        2.94549146,
+        3.48915556,
+        4.58480841,
+        6.0
+      ],
+      [
+        290,
+        1253,
+        583,
+        490,
+        382,
+        237
+      ]
+    ],
+    "radius_max": 407.51659684523145
+  },
+  "ours_q1": {
+    "centers": {
+      "valid": true,
+      "violations": [],
+      "count": 1745,
+      "total_area_m2": 62820.0,
+      "minimum_spacing_margin_m": 0.680484279343899,
+      "minimum_ground_clearance_m": 1.0,
+      "minimum_site_margin_m": 12.867337396685969,
+      "minimum_exclusion_margin_m": 7.882000000000005,
+      "whole_mirror_footprint": false
+    },
+    "whole_mirror": {
+      "valid": true,
+      "violations": [],
+      "count": 1745,
+      "total_area_m2": 62820.0,
+      "minimum_spacing_margin_m": 0.680484279343899,
+      "minimum_ground_clearance_m": 1.0,
+      "minimum_site_margin_m": 8.624696709566685,
+      "minimum_exclusion_margin_m": 3.6393593128807202,
+      "whole_mirror_footprint": true
+    },
+    "tower": [
+      0.0,
+      0.0
+    ],
+    "outer_violations": 0,
+    "inner_violations": 0,
+    "strict_violations": 0,
+    "radial_rings": 499,
+    "dimension_types": [
+      [
+        6.0,
+        6.0
+      ]
+    ],
+    "dimension_counts": [
+      1745
+    ],
+    "installation_levels": [
+      [
+        4.0
+      ],
+      [
+        1745
+      ]
+    ],
+    "radius_max": 337.13266260331403
+  },
+  "ours_q2": {
+    "centers": {
+      "valid": true,
+      "violations": [],
+      "count": 2425,
+      "total_area_m2": 121907.31310053126,
+      "minimum_spacing_margin_m": 0.050023605171347185,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 5.110136419941227,
+      "minimum_exclusion_margin_m": 5.206118135763774,
+      "whole_mirror_footprint": false
+    },
+    "whole_mirror": {
+      "valid": true,
+      "violations": [],
+      "count": 2425,
+      "total_area_m2": 121907.31310053126,
+      "minimum_spacing_margin_m": 0.050023605171347185,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 0.09660189085535098,
+      "minimum_exclusion_margin_m": 0.1925836066778972,
+      "whole_mirror_footprint": true
+    },
+    "tower": [
+      0.0,
+      0.24918702340431764
+    ],
+    "outer_violations": 0,
+    "inner_violations": 0,
+    "strict_violations": 0,
+    "radial_rings": 23,
+    "dimension_types": [
+      [
+        7.090208526459055,
+        7.090208526459055
+      ]
+    ],
+    "dimension_counts": [
+      2425
+    ],
+    "installation_levels": [
+      [
+        3.6451042632295274
+      ],
+      [
+        2425
+      ]
+    ],
+    "radius_max": 344.6406766667579
+  },
+  "ours_q3": {
+    "centers": {
+      "valid": true,
+      "violations": [],
+      "count": 2404,
+      "total_area_m2": 118520.49715433916,
+      "minimum_spacing_margin_m": 0.05017232616787659,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 5.110136419941227,
+      "minimum_exclusion_margin_m": 5.206118135763774,
+      "whole_mirror_footprint": false
+    },
+    "whole_mirror": {
+      "valid": true,
+      "violations": [],
+      "count": 2404,
+      "total_area_m2": 118520.49715433916,
+      "minimum_spacing_margin_m": 0.05017232616787659,
+      "minimum_ground_clearance_m": 0.10000000000000009,
+      "minimum_site_margin_m": 0.1545948228094396,
+      "minimum_exclusion_margin_m": 0.1925836066778972,
+      "whole_mirror_footprint": true
+    },
+    "tower": [
+      0.0,
+      0.24918702340431764
+    ],
+    "outer_violations": 0,
+    "inner_violations": 0,
+    "strict_violations": 0,
+    "radial_rings": 23,
+    "dimension_types": [
+      [
+        6.940208526459054,
+        6.940208526459054
+      ],
+      [
+        7.090208526459055,
+        6.915208526459055
+      ],
+      [
+        7.090208526459055,
+        6.925208526459055
+      ],
+      [
+        7.090208526459055,
+        6.940208526459054
+      ],
+      [
+        7.090208526459055,
+        7.090208526459055
+      ]
+    ],
+    "dimension_counts": [
+      515,
+      454,
+      291,
+      323,
+      821
+    ],
+    "installation_levels": [
+      [
+        3.5951042632295276,
+        3.6451042632295274,
+        6.0
+      ],
+      [
+        515,
+        1144,
+        745
+      ]
+    ],
+    "radius_max": 344.6406766667579
+  }
+}

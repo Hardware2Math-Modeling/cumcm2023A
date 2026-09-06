@@ -1,0 +1,332 @@
+[
+  {
+    "settings": {
+      "q": 1,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "acfd7105aea0dc97a8f44f9ac12ebb83ff749868d8b5886a8c83b0586ccce7a4",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "convergence",
+    "power_MW": 35.228195116445,
+    "unit_kW_m2": 0.5607799286285501,
+    "difference_from_16384_percent": 0.0004902649175297924
+  },
+  {
+    "settings": {
+      "q": 1,
+      "rays": 4096,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "acfd7105aea0dc97a8f44f9ac12ebb83ff749868d8b5886a8c83b0586ccce7a4",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "convergence",
+    "power_MW": 35.228036354578336,
+    "unit_kW_m2": 0.5607774013782,
+    "difference_from_16384_percent": 3.95956610166337e-05
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "convergence",
+    "power_MW": 60.20312199298,
+    "unit_kW_m2": 0.5656689586392835,
+    "difference_from_16384_percent": 0.0006627314237395154
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 4096,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "convergence",
+    "power_MW": 60.202715461901676,
+    "unit_kW_m2": 0.5656651388703,
+    "difference_from_16384_percent": -1.253882649931981e-05
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "convergence",
+    "power_MW": 60.21477195578834,
+    "unit_kW_m2": 0.5826268083442999,
+    "difference_from_16384_percent": 0.002769563052673618
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 4096,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "convergence",
+    "power_MW": 60.21332835687333,
+    "unit_kW_m2": 0.5826128403527334,
+    "difference_from_16384_percent": 0.0003720800937578872
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 4096,
+      "seed": 20260916,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "independent",
+    "power_MW": 60.202286106523324,
+    "unit_kW_m2": 0.5656611046441501,
+    "difference_from_16384_percent": -0.0007257214814981872
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 4096,
+      "seed": 20261913,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "independent",
+    "power_MW": 60.202653709068336,
+    "unit_kW_m2": 0.5656645586402667,
+    "difference_from_16384_percent": -0.0001151136441279732
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 4096,
+      "seed": 20262910,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "independent",
+    "power_MW": 60.202691250228334,
+    "unit_kW_m2": 0.5656649113772333,
+    "difference_from_16384_percent": -5.275573385921106e-05
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 4096,
+      "seed": 20263907,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "independent",
+    "power_MW": 60.20240638900834,
+    "unit_kW_m2": 0.5656622348191499,
+    "difference_from_16384_percent": -0.0005259257264245143
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.0042,
+      "mast": 3.5,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "sun_4.2",
+    "power_MW": 60.543946882216666,
+    "unit_kW_m2": 0.5688713517010666,
+    "difference_from_16384_percent": 0.5667914249324557
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.0051,
+      "mast": 3.5,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "sun_5.1",
+    "power_MW": 59.819266590748335,
+    "unit_kW_m2": 0.5620622505739167,
+    "difference_from_16384_percent": -0.6369419864956982
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 0.0,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "shaft_0",
+    "power_MW": 60.23758504724999,
+    "unit_kW_m2": 0.5659927737400332,
+    "difference_from_16384_percent": 0.057907740530582785
+  },
+  {
+    "settings": {
+      "q": 2,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 2.0,
+      "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "shaft_2",
+    "power_MW": 60.21789234993833,
+    "unit_kW_m2": 0.5658077410172833,
+    "difference_from_16384_percent": 0.025197098342211177
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 4096,
+      "seed": 20260916,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "independent",
+    "power_MW": 60.21258474216333,
+    "unit_kW_m2": 0.5826056452767501,
+    "difference_from_16384_percent": -0.0008628914601183091
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 4096,
+      "seed": 20261913,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "independent",
+    "power_MW": 60.21249054500833,
+    "unit_kW_m2": 0.5826047338426332,
+    "difference_from_16384_percent": -0.0010193310857942173
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 4096,
+      "seed": 20262910,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "independent",
+    "power_MW": 60.212822242639994,
+    "unit_kW_m2": 0.5826079432865667,
+    "difference_from_16384_percent": -0.0004684582559755235
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 4096,
+      "seed": 20263907,
+      "alpha": 0.00465,
+      "mast": 3.5,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "independent",
+    "power_MW": 60.21284360441,
+    "unit_kW_m2": 0.5826081499790499,
+    "difference_from_16384_percent": -0.0004329813108050473
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.0042,
+      "mast": 3.5,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "sun_4.2",
+    "power_MW": 60.57048398805667,
+    "unit_kW_m2": 0.5860686110667666,
+    "difference_from_16384_percent": 0.593524742194651
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.0051,
+      "mast": 3.5,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "sun_5.1",
+    "power_MW": 59.81505887273,
+    "unit_kW_m2": 0.5787592597301501,
+    "difference_from_16384_percent": -0.6610611555253221
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 0.0,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "shaft_0",
+    "power_MW": 60.249190024415,
+    "unit_kW_m2": 0.5829598311030666,
+    "difference_from_16384_percent": 0.05992999186246184
+  },
+  {
+    "settings": {
+      "q": 3,
+      "rays": 1024,
+      "seed": 20260905,
+      "alpha": 0.00465,
+      "mast": 2.0,
+      "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+      "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+    },
+    "label": "shaft_2",
+    "power_MW": 60.22952275764332,
+    "unit_kW_m2": 0.5827695343287499,
+    "difference_from_16384_percent": 0.02726722352470734
+  }
+]

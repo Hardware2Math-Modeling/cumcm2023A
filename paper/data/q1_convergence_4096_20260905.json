@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "q": 1,
+    "rays": 4096,
+    "seed": 20260905,
+    "alpha": 0.00465,
+    "mast": 3.5,
+    "input_sha256": "acfd7105aea0dc97a8f44f9ac12ebb83ff749868d8b5886a8c83b0586ccce7a4",
+    "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+  },
+  "label": "convergence",
+  "power_MW": 35.228036354578336,
+  "unit_kW_m2": 0.5607774013782,
+  "difference_from_16384_percent": 3.95956610166337e-05
+}

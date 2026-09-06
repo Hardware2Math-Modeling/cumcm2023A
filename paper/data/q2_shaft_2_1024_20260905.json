@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "q": 2,
+    "rays": 1024,
+    "seed": 20260905,
+    "alpha": 0.00465,
+    "mast": 2.0,
+    "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+    "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf"
+  },
+  "label": "shaft_2",
+  "power_MW": 60.21789234993833,
+  "unit_kW_m2": 0.5658077410172833,
+  "difference_from_16384_percent": 0.025197098342211177
+}

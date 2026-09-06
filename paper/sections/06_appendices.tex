@@ -1,0 +1,99 @@
+\section{参考文献}
+\begingroup
+\renewcommand{\section}[2]{}
+\begin{thebibliography}{9}\small
+\bibitem{problem} 全国大学生数学建模竞赛组委会. 2023 年高教社杯全国大学生数学建模竞赛 A 题：定日镜场的优化设计及附件[Z]. 2023.
+\bibitem{zhang} 张平等. 太阳能塔式光热镜场光学效率计算方法[J]. 技术与市场, 2021, 28(6): 5--8.
+\bibitem{farges} Farges O, Bézian J J, El Hafi M. Global optimization of solar power tower systems using a Monte Carlo algorithm: Application to a redesign of the PS10 solar thermal power plant[J]. Renewable Energy, 2018, 119: 345--353.
+\bibitem{halton} Halton J H. On the efficiency of certain quasi-random sequences of points in evaluating multi-dimensional integrals[J]. Numerische Mathematik, 1960, 2: 84--90.
+\bibitem{source} 未署名. 第二、三问交错环形布局试验报告及配套程序[Z/CP]. 用户提供的本地资料，版本读取日期：2026-09-06.
+\end{thebibliography}
+\endgroup
+\noindent\textbf{资料使用说明。}题目与附件提供场址、设备、辐照度和效率定义；交错环形生成、分层高度和逐镜离散分配思路采用所提供资料\cite{source}。本论文据此重组推导、复算最终布局、生成图表，并新增冻结设计下的独立随机平移和物理参数敏感性检验。原参考报告及配套程序保留在仓库的 \texttt{info/} 中，本文未把这些算法来源表述为独立首创。
+
+\begin{table}[H]\centering\small
+\caption{本文算法与资料的对应关系}
+\begin{tabular}{p{38mm}p{66mm}p{38mm}}\toprule
+内容 & 来源文件或依据 & 本文处理\\\midrule
+太阳与 DNI 公式 & 竞赛题目附录 & 向量化表达与单位核对\\
+有限光锥追迹 & \texttt{info/trace.cpp} & 按源码推导并重新运行\\
+交错圆环生成 & \texttt{info/ring\_trial.py} & 推导环距与约束关系\\
+离散面积分配 & \texttt{info/adaptive.py} & 解释拉格朗日价格与局限\\
+新随机平移与敏感性 & \texttt{paper/verify\_designs.py} & 本次新增冻结设计检验\\
+矩形图、结果表 & \texttt{paper/build\_assets.py} & 从复算数据自动生成\\
+\bottomrule\end{tabular}\end{table}
+参考文献中的题目配套学术文献信息依据题目所列条目整理；本文没有以未完成的文献阅读替代算法核验。对原算法采用的有限候选范围、固定迭代次数和高度先验，正文均作明确说明。
+
+\clearpage
+\section{数据文件与复现步骤}
+本目录保存完整论文源文件、图表、冻结镜位、逐时刻输出、逐镜输出及补充实验结果。\texttt{q1.txt}、\texttt{q2.txt}、\texttt{q3.txt} 的首行依次为镜数和塔址，后续每行依次为镜心 $x$、镜心 $y$、镜宽、镜高和安装高度；保留原始行序与小数精度。
+\begin{table}[H]\centering\small
+\caption{主要复现文件}
+\begin{tabular}{p{68mm}p{78mm}}\toprule
+文件或目录 & 内容\\\midrule
+\texttt{paper.tex, sections/} & 摘要、正文与附录的 LaTeX 源码\\
+\texttt{data/q1.txt} 等 & 三问完整精度设计输入\\
+\texttt{data/q1\_times.csv} 等 & 每问 $60$ 个时刻的效率与热功率\\
+\texttt{data/*.mirrors.csv} & 与原行序对应的逐镜年均面积功率\\
+\texttt{data/verification\_runs.json} & 采样加密、新随机平移和参数扰动明细\\
+\texttt{data/verification\_summary.json} & 数值下界和配对敏感性结果\\
+\texttt{data/paper\_sources.json} & 输入与光学源码哈希、设计提升幅度\\
+\texttt{tables/, figures/} & 自动生成的结果表、矢量与高清图片\\
+\texttt{code/} & 原算法源码副本与图形工具\\
+\bottomrule\end{tabular}\end{table}
+在仓库根目录、已安装 NumPy、SciPy、Matplotlib 和 C++17 编译器的环境中执行：
+\begin{lstlisting}[language=bash]
+python paper/verify_designs.py
+python paper/build_assets.py
+cd paper
+latexmk -xelatex -interaction=nonstopmode paper.tex
+\end{lstlisting}
+已有同输入、同参数的结果时脚本复用缓存；初次运行需要执行补充追迹。正式 $16384$ 条光线结果来自此前对原程序的完整复算，本文再次核对数据与源码哈希；需要从零重算这些结果，可在仓库根目录先运行 \texttt{final/info\_figures/build\_figures.py}。不调用附带的 Windows 二进制，使用本机编译的可读 C++ 源码。
+
+第二、三问的最终设计沿用原资料已交付布局，本次未重新执行 $45$ 组初筛及所有后续搜索。有关筛选层级的描述来自所附源码与报告；本次新增实验是固定方案下的数值检验，结果不应解释为新一轮全局优化。
+
+\clearpage
+\section{关键算法代码}
+\subsection{分区交错圆环生成}
+以下代码摘自原环形生成器，保留距离公式、区段交界处理和中心边界判断。完整源码副本位于 \texttt{code/ring\_trial.py}。
+\lstinputlisting[language=Python,firstline=11,lastline=33]{code/ring_trial.py}
+输入为统一镜宽、镜高、安装高度、塔南北坐标和区段环数；输出为候选底座及各圆环元数据。函数中 $\texttt{pitch}=w+5.02$，相邻环采用半角错位，区段交界处使用完整节距。输出还需经过镜面对约束检查及完整光学评价。
+
+\clearpage
+\subsection{面积价格选择与二分更新}
+以下为原逐镜分配程序的核心。\texttt{P} 与 \texttt{A} 的列对应镜子，行对应规格选项；零号选项为删除。完整代理表计算和全场复算见 \texttt{code/adaptive.py}。
+\lstinputlisting[language=Python,firstline=19,lastline=40]{code/adaptive.py}
+二分得到的是代理功率约束下的离散选择，后续必须对同时更新后的整场重新追迹。若代理和耦合结果存在较大偏差，应回退或增加容量恢复；仅凭价格迭代次数较多，不能声称已求得原始几何问题的全局最优。
+
+\clearpage
+\section{补充图形}
+\paperfig{04_q2_q3_comparison}{1.0}{第二、三问采用相同色标的布局比较。两方案塔址相同，但留镜数量和逐镜尺寸不同。}{compare-extra}
+\paperfig{09_q3_rectangle_detail}{1.0}{第三问中部及北部外环带的真实比例局部放大，展示小矩形镜面及半角交错排列。}{detail-extra}
+主图用 $1.2$ 倍符号便于读者辨认，局部放大图保留真实投影比例。小矩形的朝向属于给定时刻的镜面姿态，不能解释为镜面全年保持相同方位。
+
+\clearpage
+\paperfig{07_monthly_power}{1.0}{三问月均热功率和第二、三问单位面积热功率。$60\,\mathrm{MW}$ 虚线表示年均额定要求。}{monthly-extra}
+\paperfig{08_monthly_efficiencies}{1.0}{三问月平均分项效率，先逐时刻面积加权，再对五个时刻平均。}{eff-extra}
+\paperfig{q1_time_heatmap}{.9}{第一问十二个月和五个规定时刻的全场热功率。}{heat-extra}
+
+\clearpage
+\section{人工智能工具使用说明}
+本论文的编写与复核过程中使用了 OpenAI Codex 辅助工具。使用日期为 2026 年 9 月 6 日；实际版本标识以该会话平台记录为准。使用范围如下。
+\begin{enumerate}[label=（\arabic*）]
+\item \textbf{资料整理与代码解释。}读取题目、已有论文结构及用户提供的环形布局程序，梳理太阳几何、光锥采样、环距计算和离散面积分配的对应关系，并标记算法先验与求解范围。
+\item \textbf{程序编写与实验执行。}辅助编写冻结设计检验脚本、图表生成脚本和文档核验脚本，调用本地 C++ 追迹源码完成数值计算。功率、效率、约束裕量和敏感性结果由程序输出，不以语言模型估计代替。
+\item \textbf{论文起草与排版。}按照指定章节结构组织中文论述、公式与图注，生成 LaTeX 源码，编译 PDF 并开展页面渲染检查。图形由实际坐标和数值结果绘制，小矩形的显示放大比例在图注中明示。
+\item \textbf{一致性检查。}核对原始输入哈希、逐镜功率恒等式、结果表和文中数字，区分原算法已有搜索、本次新增验证和后续建议，避免把未执行的实验写成已完成结果。
+\end{enumerate}
+算法的来源、补充假设、有限搜索范围及数值验证局限均在正文和附录中披露。本说明不声称存在未实际进行的作者人工复核，也不把生成式工具输出视为独立实验依据。使用本稿的参赛团队应按实际使用情况维护说明，并由署名成员承担最终内容、引用及提交材料的核对责任。
+
+\begin{table}[H]\centering\small
+\caption{可追溯的工具辅助内容与证据}
+\begin{tabular}{p{49mm}p{96mm}}\toprule
+辅助内容 & 对应证据\\\midrule
+数值检验 & \texttt{verification\_runs.json} 及各情景 CSV\\
+最终设计来源 & 原 \texttt{info/data/} 与本目录副本的哈希一致性\\
+图表生成 & \texttt{build\_assets.py}、逐镜与逐时刻数组\\
+排版与页数 & 编译日志、最终 PDF 及页面检查记录\\
+算法出处 & 参考文献与 \texttt{code/} 内源码副本\\
+\bottomrule\end{tabular}\end{table}

@@ -1,0 +1,65 @@
+% !TEX program = xelatex
+\documentclass[UTF8,a4paper,zihao=-4,fontset=mac]{ctexart}
+\usepackage[left=25mm,right=25mm,top=23mm,bottom=23mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,bm,booktabs,array,multirow,graphicx}
+\usepackage{enumitem,float,caption,fancyhdr,hyperref,needspace,listings,xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\hypersetup{hidelinks,pdftitle={基于有限光锥追迹与分区交错环形优化的定日镜场设计},pdfauthor={}}
+\definecolor{navy}{HTML}{124C8C}
+\definecolor{orange}{HTML}{D66A00}
+\definecolor{wine}{HTML}{B52240}
+\captionsetup{font=small,labelfont=bf,labelsep=quad,skip=6pt}
+\ctexset{section={format=\large\bfseries,beforeskip=12pt,afterskip=9pt},
+subsection={format=\normalsize\bfseries,beforeskip=10pt,afterskip=7pt},
+subsubsection={format=\normalsize\bfseries,beforeskip=8pt,afterskip=5pt}}
+\setlist{leftmargin=2em,itemsep=4pt,topsep=5pt}
+\linespread{1.22}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\textfloatsep}{12pt}
+\setlength{\intextsep}{10pt}
+\renewcommand{\arraystretch}{1.18}
+\clubpenalty=10000\widowpenalty=10000\displaywidowpenalty=10000
+\pagestyle{fancy}\fancyhf{}\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\vct}[1]{\bm{#1}}
+\newcommand{\DNI}{\mathrm{DNI}}
+\newcommand{\unitp}{\mathrm{kW}/\mathrm{m}^2}
+\newcommand{\mean}[1]{\overline{#1}}
+\newcommand{\pagepart}{\clearpage}
+\newcommand{\paperfig}[4]{\begin{figure}[H]\centering\includegraphics[width=#2\linewidth]{figures/#1.pdf}\caption{#3}\label{fig:#4}\end{figure}}
+\lstset{basicstyle=\ttfamily\scriptsize,breaklines=true,columns=fullflexible,
+numbers=left,numberstyle=\tiny\color{gray},frame=single,rulecolor=\color{gray},
+keywordstyle=\color{navy},commentstyle=\color{gray},showstringspaces=false,tabsize=4}
+\input{tables/numbers.tex}
+\begin{document}
+\hypersetup{pageanchor=false}
+\thispagestyle{empty}
+\begin{center}
+{\zihao{3}\bfseries 基于有限光锥追迹与分区交错环形优化的\\定日镜场设计}\par
+\vspace{4mm}{\large\bfseries 摘\quad 要}
+\end{center}
+塔式光热电站的定日镜场存在采光面积、镜间遮挡与额定产热能力相互制约的设计问题。本文建立有限光锥几何追迹模型，结合分区交错环形布局和离散面积分配，完成定场评价及两类镜场优化设计。
+
+\textbf{针对问题一，建立太阳位置、镜面姿态与相关光学损失的联合计算模型。}首先在东、北、天顶坐标系中计算太阳方向和法向直接辐照度，利用太阳中心方向与集热器方向的角平分线确定镜面法向；然后对矩形镜面和有限太阳圆盘进行随机平移 Halton 采样，通过镜面求交、塔体遮挡及圆柱首次命中判定有效光线，并按镜面面积与规定时刻汇总功率。对附件中的 $1745$ 面镜，在全部 $60$ 个时刻、每镜每时刻 $16384$ 条光线下计算，得到年平均光学效率 \textbf{0.57619}，年均热功率 \textbf{35.2280 MW}，单位面积年均热功率 \textbf{0.56078 kW/m$^2$}。
+
+\textbf{针对问题二，建立容量约束下统一镜型的交错环形优化模型。}以塔址、统一尺寸、安装高度、环带圈数和相位为参数，依据相邻镜心弦距推导径向间距，在各区段内采用等镜数、半角错位排列；先对 $45$ 组参数组合筛选，再局部细化并逐批删除低收益镜面，每次删镜后复算全场。所得塔址为 \textbf{$(0,-60)$ m}，镜面为 $5.75\,\mathrm m\times5.75\,\mathrm m$，安装高度为 $2.925\,\mathrm m$；共 \textbf{3219 面}、占用 $34$ 个圆环，年均热功率 \textbf{60.2027 MW}，单位面积年均热功率 \textbf{0.56567 kW/m$^2$}。
+
+\textbf{针对问题三，建立径向分层高度与逐镜离散规格相结合的面积分配模型。}将镜场划分为八个径向区间，在安装高度单调不降、最外层为 $6\,\mathrm m$ 的先验下扫描层高；随后固定邻居建立逐镜功率代理表，以面积价格协调尺寸和留镜选择，二分价格使预测容量接近门槛，再用全场耦合追迹检验候选。最终采用 \textbf{3235 面镜、七种镜面规格和六档安装高度}，总面积为 $103350.5000\,\mathrm m^2$，年均热功率 \textbf{60.2131 MW}，单位面积年均热功率 \textbf{0.58261 kW/m$^2$}，较第二问提高 \textbf{\Gain\%}，镜面面积减少 \textbf{\Saving\%}。
+
+\vspace{3mm}
+\noindent\textbf{关键词：}定日镜场；有限光锥追迹；交错环形布局；随机平移 Halton 序列；离散面积分配
+\clearpage
+\setcounter{page}{1}
+\hypersetup{pageanchor=true}
+\input{sections/01_preliminaries.tex}
+\input{sections/02_question_one.tex}
+\input{sections/03_question_two.tex}
+\input{sections/04_question_three.tex}
+\input{sections/05_validation_conclusion.tex}
+\label{main-end}
+\clearpage
+\appendix
+\input{sections/06_appendices.tex}
+\end{document}

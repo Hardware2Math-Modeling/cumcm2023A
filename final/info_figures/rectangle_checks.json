@@ -1,0 +1,26 @@
+{
+  "1": {
+    "mirror_rectangles": 1745,
+    "max_center_error_m": 2.842170943040401e-14,
+    "max_edge_dot_product_m2": 4.654054919228656e-13,
+    "original_width_preserved": true,
+    "projected_height_within_actual_height": true,
+    "compact_linear_scale": 1.2
+  },
+  "2": {
+    "mirror_rectangles": 3219,
+    "max_center_error_m": 5.684341886080802e-14,
+    "max_edge_dot_product_m2": 4.3165471197426086e-13,
+    "original_width_preserved": true,
+    "projected_height_within_actual_height": true,
+    "compact_linear_scale": 1.2
+  },
+  "3": {
+    "mirror_rectangles": 3235,
+    "max_center_error_m": 5.684341886080802e-14,
+    "max_edge_dot_product_m2": 4.2366110619695974e-13,
+    "original_width_preserved": true,
+    "projected_height_within_actual_height": true,
+    "compact_linear_scale": 1.2
+  }
+}

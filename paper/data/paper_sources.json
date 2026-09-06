@@ -1,0 +1,13 @@
+{
+  "source": "info frozen ring designs",
+  "figure_scale": 1.2,
+  "reference_pose": "March 21 12:00",
+  "gain_q3_vs_q2_percent": 2.9956699621551452,
+  "area_saving_percent": 2.8917973445709566,
+  "inputs": {
+    "info/trace.cpp": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf",
+    "info/data/q1.txt": "acfd7105aea0dc97a8f44f9ac12ebb83ff749868d8b5886a8c83b0586ccce7a4",
+    "info/data/q2.txt": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+    "info/data/q3.txt": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f"
+  }
+}

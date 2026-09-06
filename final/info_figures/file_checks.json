@@ -1,0 +1,16 @@
+{
+  "protected_inputs_unchanged": true,
+  "build_script_matches_manifest": true,
+  "main_pdf_pages": 9,
+  "figure_sets": 13,
+  "formats": [
+    "PDF",
+    "SVG",
+    "PNG"
+  ],
+  "vector_mirror_paths": {
+    "1": 1745,
+    "2": 3219,
+    "3": 3235
+  }
+}

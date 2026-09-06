@@ -1,0 +1,51 @@
+{
+  "abstract_pages": 1,
+  "body_pages": 28,
+  "pages_excluding_appendices": 29,
+  "appendix_pages": 7,
+  "total_pages": 36,
+  "page_limit_passed": true,
+  "structure_passed": true,
+  "latex_warnings": 0,
+  "source_inputs_unchanged": true,
+  "metrics": {
+    "1": {
+      "count": 1745,
+      "area_m2": 62820.0,
+      "power_MW": 35.22802240581,
+      "geometry": {
+        "minimum_spacing_m": 11.680484279343899,
+        "spacing_surplus_m": 0.680484279343899,
+        "ground_margin_m": 1.0,
+        "center_boundary_margin_m": 12.867337396685969,
+        "center_exclusion_margin_m": 7.882000000000005
+      }
+    },
+    "2": {
+      "count": 3219,
+      "area_m2": 106428.1875,
+      "power_MW": 60.202723010616666,
+      "geometry": {
+        "minimum_spacing_m": 10.770007716123342,
+        "spacing_surplus_m": 0.020007716123341623,
+        "ground_margin_m": 0.04999999999999982,
+        "center_boundary_margin_m": 0.045539691559213225,
+        "center_exclusion_margin_m": 0.019999999531862045
+      }
+    },
+    "3": {
+      "count": 3235,
+      "area_m2": 103350.5,
+      "power_MW": 60.213104315898335,
+      "geometry": {
+        "minimum_spacing_m": 10.770007716123342,
+        "spacing_surplus_m": 0.020007716123341623,
+        "ground_margin_m": 0.04999999999999982,
+        "center_boundary_margin_m": 0.045539691559213225,
+        "center_exclusion_margin_m": 0.019999999531862045
+      }
+    }
+  },
+  "independent_capacity_check_passed": true,
+  "pdf_sha256": "5af81c02d149b09676dc4fc20caa210f13bbc8abb6f2d078e35dc54cba1b9110"
+}

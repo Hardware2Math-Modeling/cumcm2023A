@@ -1,0 +1,96 @@
+{
+  "input_sha256": {
+    "info/trace.exe": "ca46079073c32180a8b88d222a19a35195c49e6066d0c60bc67cffb21d8aa1e3",
+    "info/trace_probe.exe": "ab942d28ecddf0fbb22f9f8871e5b34aeeb3474d0de5a34c65e33f3dc3c08046",
+    "info/trace.cpp": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf",
+    "info/环形布局试验报告.pdf": "cae0ffded391ad04a449b35f856280b0513cb306e22f8e92553eb705bb8b74e9",
+    "info/adaptive.py": "5bd4b951d00dc169e5d67bfc2a1f9855197b38a2ad51f7d35a3c1f52fcd6af21",
+    "info/solve.py": "af46be8dec35f9b6e91709e17112873bba9ab6a2ae40f34106c2c53153c812a2",
+    "info/recompute.py": "beacc9a4dfa9d411c7a4ec20adf0ab94f94b642117361dde2d88a23b471839af",
+    "info/ring_trial.py": "6706dfa9002ed348a9429768e6bd9d2c963f9770b6f5a6194e37fa9f4bc10e71",
+    "info/data/expected.json": "e0f6b7011410e50dc1a83a797fce744dfe093034500226043cc3974030745cb5",
+    "info/data/q1.txt": "acfd7105aea0dc97a8f44f9ac12ebb83ff749868d8b5886a8c83b0586ccce7a4",
+    "info/data/q3.txt": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+    "info/data/q2.txt": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+    "final/paper.pdf": "fb7e5dcf4d746da6f30ad824aff36f6c56228186c0d39d18099529cc2cb353bf",
+    "final/paper.tex": "97bae3e71e63fd93d11ebb107f1d11aa4ca328add322118d263e5fc69ce4d906",
+    "final/data/q2.npz": "9f39d3d7b9dde37b22d65f66683ab1d4ce50ce3f503607b696183466b68d95bc",
+    "final/data/q3.npz": "ed759ab36dff57836945ef6ce8073643b81b878461bf042bf042fa997c3ca9fc"
+  },
+  "unchanged": true,
+  "figure_script_sha256": "90f4712f5787ae5804a1bf4716df19d892f7d2464653838283d1c859b4b44b23",
+  "reference_pose": "March 21, solar time 12:00; true horizontal projection",
+  "compact_symbol_linear_scale": 1.2,
+  "exact_scale_alternatives": "to_scale/",
+  "geometric_coordinates_changed": false,
+  "rays_per_mirror_time": 16384,
+  "seed": 20260905,
+  "outputs": [
+    "01_q1_layout",
+    "02_q2_layout",
+    "03_q3_layout",
+    "04_q2_q3_comparison",
+    "05_q3_area_and_height",
+    "06_q3_specifications",
+    "07_monthly_power",
+    "08_monthly_efficiencies",
+    "09_q3_rectangle_detail",
+    "to_scale/q1_layout",
+    "to_scale/q2_layout",
+    "to_scale/q3_layout",
+    "to_scale/q3_area_and_height"
+  ],
+  "summaries": {
+    "1": {
+      "settings": {
+        "input_sha256": "acfd7105aea0dc97a8f44f9ac12ebb83ff749868d8b5886a8c83b0586ccce7a4",
+        "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf",
+        "rays": 16384,
+        "seed": 20260905,
+        "solar_half_angle_rad": 0.00465,
+        "mast_radius_m": 3.5
+      },
+      "power_MW": 35.22802240581,
+      "unit_kW_m2": 0.5607771793346501,
+      "count": 1745,
+      "area_m2": 62820.0,
+      "difference_from_expected_MW": 0.0,
+      "time_csv_sha256": "b4ee813bd3133ff21fc2e5a89742ef0eab50f8c6c5652c4f321283d7e3970520",
+      "per_mirror_csv_sha256": "467e1a96de9e336a45d56a67d232b94d7224c64cd1a864a2a67e5ccb1ecd2760"
+    },
+    "2": {
+      "settings": {
+        "input_sha256": "58615ece6f7056345f390bc89fdbc0b95888b5198cf3ec222990448e7341e834",
+        "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf",
+        "rays": 16384,
+        "seed": 20260905,
+        "solar_half_angle_rad": 0.00465,
+        "mast_radius_m": 3.5
+      },
+      "power_MW": 60.20272301061666,
+      "unit_kW_m2": 0.5656652097980834,
+      "count": 3219,
+      "area_m2": 106428.1875,
+      "difference_from_expected_MW": 0.0,
+      "time_csv_sha256": "d37ba28d7519d1d339737199b597e0cbde56079ca57fa919d5bba1d2a02ed6d0",
+      "per_mirror_csv_sha256": "d7a36ad0deda4c97014e5818b3b4dba6cf57b0e03ee1069ef82999bf83dedf84"
+    },
+    "3": {
+      "settings": {
+        "input_sha256": "ea22697a9758aeec166812e662f7bd3f838e0bc7e7db00322a76e6318804099f",
+        "source_sha256": "6594143048315a1f4498b6d86ebc9beae2122f546598cefb7ff3e64141ae1adf",
+        "rays": 16384,
+        "seed": 20260905,
+        "solar_half_angle_rad": 0.00465,
+        "mast_radius_m": 3.5
+      },
+      "power_MW": 60.21310431589834,
+      "unit_kW_m2": 0.5826106725743665,
+      "count": 3235,
+      "area_m2": 103350.5,
+      "difference_from_expected_MW": 0.0,
+      "time_csv_sha256": "7248fbe445b5ca4eea50f7f87aaafdd2215dbc131c5541ad87a8b5bf0c821f55",
+      "per_mirror_csv_sha256": "18796eb564a18759888f0780e384d7dc0fe0206b6c7623726a86218f33b1f26e"
+    }
+  }
+}

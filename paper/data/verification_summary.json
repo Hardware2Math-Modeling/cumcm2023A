@@ -1,0 +1,78 @@
+{
+  "independent": {
+    "2": {
+      "mean_MW": 60.20250936370708,
+      "replicates_MW": [
+        60.202286106523324,
+        60.202653709068336,
+        60.202691250228334,
+        60.20240638900834
+      ],
+      "se_MW": 9.762421515239269e-05,
+      "lower95_MW": 60.20227961844879
+    },
+    "3": {
+      "mean_MW": 60.212685283555416,
+      "replicates_MW": [
+        60.21258474216333,
+        60.21249054500833,
+        60.212822242639994,
+        60.21284360441
+      ],
+      "se_MW": 8.749045523563661e-05,
+      "lower95_MW": 60.21247938671717
+    }
+  },
+  "sensitivity": [
+    {
+      "q": 2,
+      "scenario": "sun_4.2",
+      "power_MW": 60.543946882216666,
+      "paired_change_percent": 0.5661249416208047
+    },
+    {
+      "q": 2,
+      "scenario": "sun_5.1",
+      "power_MW": 59.819266590748335,
+      "paired_change_percent": -0.6376004923406287
+    },
+    {
+      "q": 2,
+      "scenario": "shaft_0",
+      "power_MW": 60.23758504724999,
+      "paired_change_percent": 0.057244629728692153
+    },
+    {
+      "q": 2,
+      "scenario": "shaft_2",
+      "power_MW": 60.21789234993833,
+      "paired_change_percent": 0.024534204322579356
+    },
+    {
+      "q": 3,
+      "scenario": "sun_4.2",
+      "power_MW": 60.57048398805667,
+      "paired_change_percent": 0.5907388182579298
+    },
+    {
+      "q": 3,
+      "scenario": "sun_5.1",
+      "power_MW": 59.81505887273,
+      "paired_change_percent": -0.6638123338768565
+    },
+    {
+      "q": 3,
+      "scenario": "shaft_0",
+      "power_MW": 60.249190024415,
+      "paired_change_percent": 0.05715884575951957
+    },
+    {
+      "q": 3,
+      "scenario": "shaft_2",
+      "power_MW": 60.22952275764332,
+      "paired_change_percent": 0.02449698201267836
+    }
+  ],
+  "inference": "Four fresh random shifts at 4096 rays. Student-t bound estimates numerical integration uncertainty only.",
+  "design_unchanged": true
+}
