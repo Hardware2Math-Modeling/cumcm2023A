@@ -85,7 +85,8 @@ extern "C" void trace(int n,int samples,const double* centers,const double* widt
             double arrival=cylinder(p,r,tx,ty,rr,bottom,top,receive_kind);
             bool hit=(receive_kind==1);
             if(hit) isolated+=weight;
-            V incident=mul(s,-1);
+            // Upstream visibility from the mirror is +s, opposite photon travel.
+            V incident=s;
             bool shadow=std::isfinite(cylinder(p,incident,tx,ty,shaft,0,bottom,kind));
             if(!shadow) shadow=std::isfinite(cylinder(p,incident,tx,ty,rr,bottom,top,kind));
             if(!shadow) shadow=mirrors(p,incident,i,sptr,sids,centers,normals,us,vs,widths,heights);

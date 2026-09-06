@@ -46,9 +46,6 @@ def neighbor_lists(field,sun,target,v,cone,all_pairs=False):
     it. No arbitrary nearest-K truncation and no assumed fixed neighbor radius.
     """
     n=len(field)
-    # Exhaustive mode is inexpensive for unit tests and prevents a geometric
-    # culling approximation from hiding a missed blocker in small designs.
-    if n < 128: all_pairs=True
     if all_pairs:
         ids=np.array([j for i in range(n) for j in range(n) if i!=j],np.int64)
         ptr=np.arange(n+1,dtype=np.int64)*(n-1)

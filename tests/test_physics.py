@@ -8,6 +8,18 @@ from heliostat.io import safe_output,PROBLEM
 
 
 class PhysicsTests(unittest.TestCase):
+    def test_shadow_query_points_toward_sun(self):
+        # Winter noon: tower lies between a north-field mirror and the Sun.
+        # Reversing the visibility ray incorrectly reports an unshadowed mirror.
+        site=replace(Site(),solar_radius=0)
+        north=Field([[0,110,4]],2,2,[0,0])
+        south=Field([[0,-110,4]],2,2,[0,0])
+        for backend in ('native','numpy'):
+            a=evaluate(north,site,rays=128,time_indices=[57],backend=backend)
+            b=evaluate(south,site,rays=128,time_indices=[57],backend=backend)
+            self.assertAlmostEqual(a.metrics[0,0,3],0,places=12)
+            self.assertAlmostEqual(b.metrics[0,0,3],1,places=12)
+
     def test_solar_east_and_symmetry(self):
         a,b=solar_vector(0,9),solar_vector(0,15)
         self.assertGreater(a[0],0)

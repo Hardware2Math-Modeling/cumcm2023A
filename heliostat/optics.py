@@ -69,8 +69,9 @@ def trace_numpy(field,normal,u,v,directions,uv,gauss,sun,neighbors,site):
         r=2*np.einsum('ij,ij->i',local,directions)[:,None]*local-directions
         arrival,kind=cylinder_intersection(p,r,field.tower,site.receiver_radius,zlo,zhi)
         hit=kind==1
-        # directions point from mirror toward the Sun; incident propagation is -directions.
-        incident=-directions
+        # Test upstream visibility FROM the mirror TOWARD the Sun. Photon
+        # propagation is -s, but a shadow query starts at the receiver point.
+        incident=directions
         shadow=np.isfinite(cylinder_intersection(p,incident,field.tower,site.tower_radius,0,zlo)[0])
         shadow|=np.isfinite(cylinder_intersection(p,incident,field.tower,site.receiver_radius,zlo,zhi)[0])
         ptr,ids=neighbors[0]

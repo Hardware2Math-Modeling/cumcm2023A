@@ -1,0 +1,300 @@
+% !TEX program = xelatex
+\documentclass[UTF8,a4paper,11pt]{ctexart}
+\usepackage[a4paper,left=2.35cm,right=2.35cm,top=2.25cm,bottom=2.25cm]{geometry}
+\usepackage{amsmath,amssymb,bm,booktabs,array,multirow,graphicx,xcolor,siunitx}
+\usepackage{enumitem,algorithm,algpseudocode,hyperref,threeparttable,caption,float}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\captionsetup{font=small,labelfont=bf}
+\setlist{nosep,leftmargin=2em}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\vect}[1]{\bm{#1}}
+\newcommand{\E}{\mathbb E}
+\title{定日镜场的几何光学建模与混合启发式优化}
+\author{数学建模算法报告（可复现实验稿）}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+针对塔式太阳能热发电定日镜场的布局设计问题，建立一个能够同时处理太阳非平行光、有限尺寸集热器、镜面阴影与反射遮挡的几何光学模型。镜面位置、宽高和安装高度被统一表示在东--北--天顶坐标系中；以镜面面积采样和太阳圆盘采样构成的扰乱 Sobol 积分估计逐镜接收能量。问题一在附件给定的 1745 面镜上得到年平均输出约 $35.43$ MW、单位面积输出约 $0.564$ kW/m$^2$（1024 条光线/镜/时刻的可复现实验配置）。问题二采用“乐观上界筛选--全场交互追踪--容量恢复--高精度局部搜索”的多保真策略，搜索统一镜型并以年均功率不低于 60 MW 为硬约束；问题三从问题二的可行解出发，按径向和方位分区进行异构镜面尺寸、高度、位置与塔址的混合搜索。问题二、三的最终答案由独立随机化验证后的 `verification.json`、`result2.xlsx` 和 `result3.xlsx` 给出，只有单侧 95\% 功率下界仍不低于 60 MW 的方案才被接受。程序同时提供 NumPy 参考实现、C++ 加速实现、空间邻域筛选、独立随机化验证和敏感性分析。模型的所有未给定物理量均显式参数化，原始附件只读，结果可由命令行完全复现。
+\end{abstract}
+
+\noindent\textbf{关键词：} 定日镜场；塔式光热；光线追踪；Sobol 积分；混合启发式优化；数值验证
+
+\section{问题重述与建模目标}
+题目给定海拔 \SI{3000}{m}、纬度 $39.4^\circ$、半径 \SI{350}{m} 的圆形镜场，塔顶集热器中心高度为 \SI{80}{m}，集热器为高 \SI{8}{m}、直径 \SI{7}{m} 的外表受光圆柱。塔周围 \SI{100}{m} 内不安装定日镜，任意相邻镜面底座中心距离至少为较大镜面宽度加 \SI{5}{m}。\par
+
+每月 21 日在当地时间 9:00、10:30、12:00、13:30、15:00 计算一次，全年共 60 个等权时刻。问题一给出 1745 面镜的位置、\SI{6}{m}$\times$\SI{6}{m} 镜面和 \SI{4}{m} 安装高度，要求计算平均光学效率、平均输出热功率及单位面积功率。问题二要求统一镜型，在年均输出不少于 \SI{60}{MW} 的条件下最大化单位镜面面积输出。问题三允许各镜尺寸和安装高度不同，目标相同。
+
+本文将问题二、三写成统一的约束优化形式：
+\begin{equation}
+ \max_{\mathcal F}\quad J(\mathcal F)=\frac{\overline P(\mathcal F)}{A(\mathcal F)},
+ \qquad \overline P(\mathcal F)\ge 60000\ \si{kW},
+ \label{eq:objective}
+\end{equation}
+其中 $\mathcal F$ 为镜场设计，$A=\sum_i w_i h_i$，$\overline P$ 是 60 个规定时刻的平均接收热功率。该问题同时包含连续变量、离散镜面位置、碰撞约束和由光线相交决定的非光滑目标，因而采用带精确可行性检查的启发式算法，不把局部结果表述为全局最优证明。
+
+\section{太阳位置和直接辐照度}
+令纬度为 $\varphi$，太阳赤纬为 $\delta$，当地太阳时角为 $\omega=\pi(ST-12)/12$。采用东、北、天顶坐标系，太阳中心方向单位向量写为
+\begin{equation}
+ \vect s=\begin{bmatrix}
+ -\cos\delta\sin\omega\\
+ \sin\delta\cos\varphi-\cos\delta\sin\varphi\cos\omega\\
+ \sin\delta\sin\varphi+\cos\delta\cos\varphi\cos\omega
+ \end{bmatrix}.
+ \label{eq:sun}
+\end{equation}
+其中
+\begin{equation}
+ \sin\delta=\sin\left(\frac{2\pi D}{365}\right)\sin 23.45^\circ.
+\end{equation}
+式\eqref{eq:sun}直接给出上午的东向分量为正，避免通过反余弦求方位角时的分支错误。法向直接辐照度使用题目附录：
+\begin{equation}
+ \mathrm{DNI}=1.366\left[a+b\exp\left(-\frac{c}{\sin\alpha_s}\right)\right],
+\end{equation}
+\begin{equation}
+ a=0.4237-0.00821(6-H)^2,\quad b=0.5055+0.00595(6.5-H)^2,\quad c=0.2711+0.01858(2.5-H)^2.
+\end{equation}
+本题 $H=3$ km。大气透射率为
+\begin{equation}
+ \eta_{at}=0.99321-1.176\times10^{-4}d_{HR}+1.97\times10^{-8}d_{HR}^2,
+ \label{eq:atmosphere}
+\end{equation}
+并在程序中检查 $d_{HR}\le1000$ m 的适用范围。
+
+\section{单面镜几何光学模型}
+\subsection{镜面姿态}
+设镜心为 $\vect c_i$，集热器中心为 $\vect T=(x_T,y_T,80)$，镜心指向集热器的单位向量为
+\begin{equation}
+ \vect t_i=\frac{\vect T-\vect c_i}{\|\vect T-\vect c_i\|}.
+\end{equation}
+平面镜法向取太阳中心方向和目标方向的角平分线：
+\begin{equation}
+ \vect n_i=\frac{\vect s+\vect t_i}{\|\vect s+\vect t_i\|}.
+ \label{eq:normal}
+\end{equation}
+取水平宽度方向 $\vect u_i$ 满足 $\vect u_i\perp\vect n_i$，高度方向为 $\vect v_i=\vect n_i\times\vect u_i$。宽度为 $w_i$、高度为 $h_i$ 的镜面点为
+\begin{equation}
+ \vect p_i(\xi,\zeta)=\vect c_i+\xi w_i\vect u_i+\zeta h_i\vect v_i,\qquad \xi,\zeta\in[-1/2,1/2].
+ \label{eq:mirrorpoint}
+\end{equation}
+
+\subsection{太阳圆盘与反射光线}
+太阳具有有限视半径 $\alpha_\odot=4.65$ mrad。对太阳圆盘方向 $\vect s'$ 采用均匀投影立体角采样；采样方向与太阳中心方向的夹角满足 $\sin\theta=\sin\alpha_\odot\sqrt U$。对每个镜面点，反射方向为
+\begin{equation}
+ \vect r=2(\vect n_i\cdot\vect s')\vect n_i-\vect s'.
+ \end{equation}
+太阳中心法向投影修正权重取
+\begin{equation}
+ q=\frac{\max(0,\vect n_i\cdot\vect s')}{\vect s'\cdot\vect s}.
+ \label{eq:weight}
+\end{equation}
+当 $\alpha_\odot\to0$ 时，该模型退化为太阳单一中心光线；实际计算保留太阳圆盘，以便自然产生集热器截断损失。
+
+\subsection{有限圆柱集热器}
+集热器外表建模为半径 $R=3.5$ m、轴线竖直、上下边界 $z=76$ m 和 $z=84$ m 的有限闭圆柱。对射线 $\vect p+\lambda\vect d$，分别求侧面二次方程和两个端面交点，取最小正交距离。只有第一次命中侧面的光线计入接收；命中端面、塔身或其他镜面的光线均不计入接收。这一处理避免将“先穿过端面、再从侧面离开”的光线错误计为有效能量。
+
+\subsection{遮挡、截断与功率}
+入射方向为 $-\vect s'$，沿该方向检查其他矩形镜、塔身和集热器；沿 $\vect r$ 检查反射遮挡和接收器。令一面镜在某时刻所有采样权重和为 $C$，扣除入射阴影和反射遮挡后的权重为 $S$，最终首次命中圆柱侧面的权重为 $H$，样本数为 $K$，则
+\begin{equation}
+ \eta_{cos}=C/K,\qquad \eta_{vis}=S/C,\qquad \eta_{trunc}=H/S.
+ \label{eq:efficiency}
+\end{equation}
+阴影和反射遮挡采用逐光线布尔并集，避免重复扣损。单面镜接收功率为
+\begin{equation}
+ P_i=\mathrm{DNI}\,w_i h_i\,\eta_{at,i}\,\eta_{ref}\,H/K,
+ \qquad \eta_{ref}=0.92.
+ \label{eq:power}
+\end{equation}
+这等价于将所有损失作用在同一批光线的能量账本上，而不是事后把若干独立平均效率简单相乘。
+
+\section{约束与空间筛选}
+除题目给定限制外，程序采用保守的外接圆边界：镜面水平投影的外接圆完全位于场地内，并完全避开塔周禁区。任意两镜 $i,j$ 满足
+\begin{equation}
+ \|\vect c_i-\vect c_j\|_2\ge \max(w_i,w_j)+5.
+\end{equation}
+所有设计均检查 $2\le h_i\le w_i\le8$、$2\le z_i\le6$ 及 $z_i-h_i/2>0$。
+
+直接枚举全部镜对会使优化代价过高。由于入射和反射射线均朝上，超过最高镜面边缘后不可能再遇到镜面。程序据此由最低出发高度、最高镜面边缘和最小向上角推导二维搜索半径，并利用镜面外接球和光锥界进行候选邻域筛选；斜率误差导致角界失效时自动回退为全镜对。测试将筛选结果与全镜对追踪逐光线比较。
+
+\section{优化算法}
+\subsection{问题二：统一镜型}
+统一镜型的搜索变量为塔址 $(x_T,y_T)$、镜面宽高 $(w,h)$、安装高度 $z$、维护间距余量、行距或径向间距控制因子、布局旋转角、横纵相位、布局类别和分带长度。布局类别包括三角交错、分带径向交错和按遮挡尺度自适应的径向交错。算法流程见算法~\ref{alg:q2}。
+
+\begin{algorithm}[H]
+\caption{问题二的多保真优化流程}\label{alg:q2}
+\begin{algorithmic}[1]
+\State 由 Sobol 参数种群和人工暖启动参数生成候选镜场
+\For{每个候选镜场}
+  \State 用忽略镜间相互作用的模型计算乐观容量上界
+  \If{上界不足 \SI{60}{MW}}
+    \State 丢弃候选
+  \EndIf
+  \State 用少量 Sobol 光线进行全场交互追踪
+\EndFor
+\State 保留多个参数区域，而非只保留单一最优点
+\If{可行候选不足}
+  \State 在接近达标的候选附近做容量恢复搜索，并重新追踪
+\EndIf
+\For{晋级候选}
+  \State 提高光线数，执行精英差分扰动和坐标搜索
+  \State 按逐镜单位面积收益尝试删镜；每次删镜后重新追踪
+\EndFor
+\State 返回满足额定功率且单位面积功率最大的候选
+\end{algorithmic}
+\end{algorithm}
+
+删镜只在重新追踪后接受。因为删除镜面不会产生新的遮挡，固定采样下剩余镜的可见性不会降低；但最终功率仍由完整光学模型计算，不能用静态单镜排序代替交互追踪。
+
+\subsection{问题三：异构镜型}
+问题三从问题二的可行解开始，将镜场按相对塔址的径向距离和方位分为 6 组。每个试探步骤修改一组的宽度、高度或安装高度，随后进行位置交换和塔址小范围平移；若容量不足，则从未占用且满足距离约束的候选位置补镜。只有在完整追踪下同时满足 $\overline P\ge60$ MW 且 $J$ 严格提高时才接受修改。最后再对高收益单镜做小步长的高度和尺寸微调。该过程允许第三问真正产生异构尺寸和高度，并保留第二问作为可行基准。
+
+\subsection{搜索变量的无量纲编码}
+为避免不同量纲变量在差分扰动中互相支配，所有连续变量先映射到 $[0,1]$。设编码向量为 $\vect q$，其主要分量为
+\begin{equation}
+\vect q=(q_x,q_y,q_w,q_h,q_z,q_g,q_b,q_\theta,q_{\phi x},q_{\phi y},q_f,q_L).
+\end{equation}
+塔址、镜宽、镜高、安装高度和行距分别通过线性映射得到物理值；其中镜高上限进一步取为镜宽，安装高度下限取 $h/2+0.1$ m，以便在参数生成阶段就消除大部分无效点。$q_f$ 选择交错网格、普通径向环或自适应径向环，$q_L$ 决定相邻径向带共享的环上镜数。离散布局生成后仍运行独立约束检查，因此参数编码只是减少无效搜索，并不替代可行性判定。
+
+\subsection{布局生成与候选镜池}
+交错网格以维护间距 $p=w+5+\epsilon$ 为基本晶格长度。相邻行平移半个晶格，随后绕塔址旋转角 $\theta$ 并施加二维相位。径向布局先按半径分带，在同一带内保持镜面数不变、方位角等间隔，邻带交替半个角间隔；自适应径向布局还依据
+\begin{equation}
+ \Delta r\ge \max\left(p,\;\lambda\frac{hR}{80-z}\right)
+ \label{eq:radialpitch}
+\end{equation}
+增大内圈到外圈的径向间距，其中 $R$ 为接收器半径，$\lambda$ 为搜索变量。式\eqref{eq:radialpitch}不是遮挡的解析替代，而是用于生成具有不同稠密程度的候选族；真实阴影和遮挡仍由光线追踪判定。
+
+候选镜池包含所有满足外接圆场界、塔周禁区和镜间距要求的位置。对候选池先计算无相互作用收益 $\widehat P_i$，并按 $\widehat P_i/(w_i h_i)$ 排序。该排序只用于决定优先评估和容量恢复的顺序；最终目标值始终采用包含全部已选镜面的交互追踪结果。这样可以避免把相互遮挡严重的镜面误认为独立收益相加。
+
+\subsection{多保真目标函数与可行性恢复}
+完整光线追踪的单次评价成本约与镜面数 $N$、时刻数 $T=60$、光线数 $K$ 及邻居数 $M$ 成正比：
+\begin{equation}
+ \mathcal O(TNK M).
+ \label{eq:complexity}
+\end{equation}
+因此搜索采用三种保真度。第一层将阴影和反射遮挡置空，只给出不低于真实功率的乐观上界；第二层使用少量光线对完整镜场进行交互追踪；第三层使用更多光线，并对独立候选重新生成 Sobol 样本。候选的筛选评分为
+\begin{equation}
+ S=\frac{\widehat J}{ }\left[\min\left(1,\frac{P_{\rm coarse}}{P_0}\right)\right]^\rho,
+ \qquad P_0=60050\ \si{kW},\quad \rho=8,
+ \label{eq:screen-score}
+\end{equation}
+其中 $\widehat J$ 为无相互作用的单位面积收益。容量不足会导致评分快速下降，但不会因一次随机积分低估而永久丢弃所有邻近方案。
+
+当完整追踪得到的可行候选不足时，程序从容量最高的候选出发做容量恢复。具体地，在参数向量周围进行 Sobol 扰动和精英差分，保留完整交互功率最高的前 16 个个体；每一代生成 32 个新参数，连续进行 6 代。恢复阶段的接受标准先是提高完整场功率，再在达到额定值后比较单位面积目标。这一步是必要的，因为高单位面积但略低于 60 MW 的布局不能直接用于题目二、三。
+
+\subsection{删镜与局部改进的判定}
+设当前候选按完整模型的逐镜年均功率密度排序为 $d_{(1)}\ge\cdots\ge d_{(N)}$。程序从高密度镜面开始保留，找到使累计功率首次超过 $P_0$ 的最小前缀，并重新追踪这个子场。若重新追踪后仍满足额定功率，则用其替代原场。删除镜面只会减少遮挡源，不会使其他镜面出现新的阴影，因此这是一个具有单调性的面积压缩操作；但由于删除后剩余镜的截断和遮挡会变化，代码不会使用删除前的功率直接宣布可行。
+
+连续局部改进采用精英差分形式
+\begin{equation}
+ \vect q'=\Pi_{[0,1]}\left(\vect q_a+F(\vect q_b-\vect q_c)+\vect\varepsilon\right),
+ \label{eq:de}
+\end{equation}
+并在后期减小扰动尺度。每个试探向量经过布局生成、全约束检查和完整光线追踪；只有
+\begin{equation}
+ P(\vect q')\ge P_0,\qquad J(\vect q')>J(\vect q)
+\end{equation}
+同时成立时才更新当前最优解。该“可行优先、目标改进”规则避免以额定功率为代价追求表面上的面积收益。
+
+\subsection{第三问的分组坐标搜索}
+第三问不能直接对数千个镜面逐一使用独立遗传变量，否则搜索维度过高且大量个体违反间距约束。程序首先计算相对塔址半径 $r_i$ 和方位类别，将镜面分为六组 $G_1,\ldots,G_6$。一次试探只修改一组的宽度、高度或安装高度，其他组保持不变；连续六次后再尝试镜面位置交换和塔址小范围平移。若某组减小面积造成容量不足，则从候选镜池中按交互前收益补充镜面，再重新评价。最后对高收益个体做单镜高度微调，使解能够落在额定功率边界附近。
+
+这种分组策略有两个作用：一是将第三问的高维自由度压缩成可解释的区域变量，二是保留距离塔址不同的镜面在余弦效率、截断效率和大气透射率上的差异。由于每次接受都要求完整模型下目标提高，组变量只是搜索方向，不会改变最终评价标准。
+
+\subsection{并行、缓存和结果审计}
+候选之间、随机化复核之间相互独立，程序使用进程级并行。预计算 60 个时刻的太阳方向和 DNI；每面镜的几何基向量、距离和大气透射率在单时刻内复用。交互追踪的候选邻域采用空间树筛选；小规模测试则强制全镜对，以便验证筛选没有漏检。
+
+每次评价缓存的键由镜场数组、物理参数、光线数、随机种子及模型源码哈希共同构成。最终复核使用 $m$ 组独立 Sobol 随机化，若功率样本为 $P_1,\ldots,P_m$，则以样本均值的单侧 Student-$t$ 下界作为额定功率判据：
+\begin{equation}
+ P_{\rm low}=\bar P-t_{0.95,m-1}\frac{s_P}{\sqrt m}\ge60000\ \si{kW}.
+ \label{eq:lowerbound}
+\end{equation}
+该下界仅描述数值积分误差，物理假设误差通过另行的敏感性分析报告。
+
+\subsection{算法伪代码}
+\begin{algorithm}[H]
+\caption{统一镜型和异构镜型的共同评价框架}\label{alg:evaluate}
+\begin{algorithmic}[1]
+\Require 参数向量 $\vect q$，物理参数 $\Theta$，时刻集合 $\mathcal T$，Sobol 样本 $\mathcal U$
+\State 根据 $\vect q$ 生成镜面中心、宽度、高度和安装高度
+\State 检查场界、禁区、镜间距和离地约束；若失败返回不可行
+\For{$t\in\mathcal T$}
+  \State 计算太阳方向、DNI、镜面法线和局部基向量
+  \State 根据光锥界建立可能遮挡邻居列表
+  \For{$i=1,\ldots,N$}
+    \For{$(\xi,\zeta,\theta)\in\mathcal U$}
+      \State 求入射方向、反射方向与首次圆柱相交
+      \State 检查入射阴影、反射遮挡和塔身遮挡
+      \State 累加余弦、可见、截断和接收能量权重
+    \EndFor
+    \State 用式\eqref{eq:efficiency}和式\eqref{eq:power}得到 $P_i(t)$
+  \EndFor
+  \EndFor
+\State 对 $t$ 和 $i$ 求和并计算 $J=\overline P/\sum_iw_ih_i$
+\State \Return $J,\overline P$ 及逐镜审计量
+\end{algorithmic}
+\end{algorithm}
+
+\section{数值实现与复核}
+\subsection{多保真与并行}
+搜索阶段使用较少光线以控制代价，晋级阶段提高光线数，最终用多组独立扰乱 Sobol 样本估计数值误差。Python/NumPy 版本是可读参考实现；C++ 版本用于大规模逐镜筛选，二者在小规模全镜对测试中逐项比较。计算缓存由镜场数组、物理参数、采样数、随机种子和源码 SHA-256 联合寻址，修改模型后不会误用旧缓存。
+
+\subsection{验证项目}
+测试包括太阳方向东西对称性、镜面反射定律、圆柱首次相交、矩形边界、镜面对称置换、遮挡物删除后的单调性、能量分解、空间筛选与全镜对一致性。最终复核使用独立随机种子 $s_1,\ldots,s_m$，输出样本均值及单侧 95\% 下界；该区间只表示随机积分误差，不包含太阳视半径、塔身半径和镜面误差等物理假设误差。
+
+\section{问题一的复算结果}
+下表为当前程序在附件 1745 面镜、塔址 $(0,0)$、镜面 \SI{6}{m}$\times$\SI{6}{m}、安装高度 \SI{4}{m} 下，使用每镜每时刻 1024 条 Sobol 光线得到的示例结果。运行更高光线数会对末位数字产生小幅随机积分变化。
+
+\begin{table}[H]
+\centering
+\caption{问题一逐月平均结果（1024 条光线/镜/时刻）}
+\begin{tabular}{crrrrrr}
+\toprule
+月份 & $\eta_{cos}$ & $\eta_{vis}$ & $\eta_{trunc}$ & $\eta_{at}$ & 功率/MW & 单位面积/(kW m$^{-2}$)\\
+\midrule
+1 & .71994 & .91881 & .92990 & .96516 & 29.9898 & .47739\\
+2 & .74044 & .92085 & .92824 & .96516 & 33.4901 & .53311\\
+3 & .76114 & .92333 & .92710 & .96516 & 36.4388 & .58005\\
+4 & .77934 & .92593 & .92798 & .96516 & 38.7884 & .61745\\
+5 & .78932 & .92780 & .92988 & .96516 & 40.0568 & .63764\\
+6 & .79236 & .92844 & .93075 & .96516 & 40.4488 & .64388\\
+7 & .78921 & .92778 & .92986 & .96516 & 40.0434 & .63743\\
+8 & .77864 & .92580 & .92789 & .96516 & 38.6987 & .61602\\
+9 & .76009 & .92319 & .92712 & .96516 & 36.2978 & .57781\\
+10 & .73784 & .92056 & .92845 & .96516 & 33.0841 & .52665\\
+11 & .71820 & .91867 & .92998 & .96516 & 29.6534 & .47204\\
+12 & .71108 & .91810 & .93036 & .96516 & 28.2023 & .44894\\
+\midrule
+年均 & .75647 & .92327 & .92926 & .96516 & 35.4327 & .56404\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+问题二、三的最终设计不在本文中手工填入未经独立复核的数值。运行复核命令后，程序将把经过额定功率下界检查的逐镜设计、月度表格、搜索历史、收敛曲线和敏感性分析写入 `output/validated/`，其中 `verification.json` 是判定结果的唯一依据。这一做法避免把低精度筛选值误当成最终结果。
+
+\section{运行方式和可复现性}
+在项目根目录执行：
+\begin{verbatim}
+conda activate tf2
+python solve_mirror_field.py all --profile research --workers 4
+python solve_mirror_field.py q1 --rays 4096
+python solve_mirror_field.py q2 --profile research --workers 4
+python solve_mirror_field.py q3 --profile research --workers 4
+python solve_mirror_field.py verify --rays 4096 --replicates 4
+python -m unittest discover -s tests -v
+\end{verbatim}
+`smoke` 配置只用于流程调试，不用于论文最终数值。`heliostat/model.py`、`geometry.py`、`optics.py`、`optimize.py`、`verification.py` 和 `io.py` 分别负责模型、几何、光学、优化、复核和输入输出；根目录脚本是推荐入口。`problem/` 中的原始附件和模板在程序中只读，程序结束时会校验其 SHA-256。
+
+\section{讨论与局限}
+题目没有提供塔身半径、太阳圆盘亮度、镜面斜率误差和实际截断测量数据。基准模型显式假设塔身半径 \SI{2}{m}、均匀太阳圆盘、视半径 4.65 mrad、理想平面镜和反射率 0.92，并输出这些参数变化下的敏感性结果。因而，本文给出的“最优”应理解为在给定物理假设、布局族和搜索预算下的高质量可行解；若获得工程实测参数，应只替换 `Site` 中的假设并重新进行独立验证。
+
+\section{结论}
+本文建立了一个从太阳位置到集热器侧面接收能量的闭合计算链：太阳圆盘采样、平面镜反射、有限矩形遮挡、塔身遮挡、圆柱首次相交和能量加权均在同一光线账本中完成。优化阶段采用上界筛选、交互追踪、容量恢复和高精度局部搜索的多阶段策略，问题三在问题二基础上实际开放镜面尺寸和安装高度。通过参考实现、加速实现、空间筛选对照、独立随机化和敏感性分析，程序能够给出可审计、可复现的设计结果，并明确区分数值积分误差与尚未确定的工程物理误差。
+
+\begin{thebibliography}{9}
+\bibitem{problem} 2023 年高教社杯全国大学生数学建模竞赛，A题：定日镜场的优化设计，2023。
+\bibitem{farges} O. Farges, J. J. Bezian, M. El Hafi, Global optimization of solar power tower systems using a Monte Carlo algorithm, Renewable Energy, 2018, 119:345--353.
+\bibitem{heliostat} 张平等，太阳能塔式光热镜场光学效率计算方法，技术与市场，2021，28(6):5--8。
+\bibitem{sobol} I. M. Sobol', On the distribution of points in a cube and the approximate evaluation of integrals, USSR Computational Mathematics and Mathematical Physics, 1967, 7(4):86--112.
+\end{thebibliography}
+\end{document}
